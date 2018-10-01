@@ -1,0 +1,28 @@
+header {
+    padding: 30px;
+    display: flex;
+
+    .column {
+        flex: 1 0 25%;
+    }
+    .column.logo {
+        flex-grow: 0;
+
+        img {
+            width: 128px;
+            height: 128px;
+        }
+    }
+    .column.nav {
+        nav {
+            text-align: right;
+
+            ul {
+                li {
+                    display: inline-block;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
