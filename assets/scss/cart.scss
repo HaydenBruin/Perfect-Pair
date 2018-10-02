@@ -1,0 +1,20 @@
+.cart {
+    .cart-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .column {
+            flex: 1 0 20%;
+
+            &.title {
+                font-weight: bold;
+                border-bottom: 1px dotted #c8c6c3;
+            }
+
+            img.productimg {
+                height: 64px;
+                width: 64px;
+            }
+        }
+    }
+}

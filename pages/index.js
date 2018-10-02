@@ -1,16 +1,13 @@
-import React, { Fragment, Component } from 'react'
-import Header from '../components/header'
+import React, { Component } from 'react'
+import DefaultLayout from '../components/layouts/default-layout'
 import Products from '../components/products'
-import '../assets/scss/app.scss'
 
 export default class index extends Component {
     render() {
         return (
-            <Fragment>
-                <Header />
-
+            <DefaultLayout>
                 <Products />
-            </Fragment>
+            </DefaultLayout>
         )
     }
 }
