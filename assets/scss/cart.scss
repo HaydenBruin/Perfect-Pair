@@ -1,23 +1,27 @@
-.cart {
-    .cart-list {
-        display: flex;
-        flex-wrap: wrap;
+.checkout {
+	display: flex;
 
-        .column {
-            flex: 1 0 20%;
+	.cart {
+		width: 35%;
+		background: #FFF;
+		border-right: 1px solid #eee;
+		min-height: 100vh;
 
-            &.title {
-                font-weight: bold;
-                border-bottom: 1px dotted #c8c6c3;
-            }
-
-            img.productimg {
-                height: 64px;
-                width: 64px;
-            }
-        }
-    }
+		img.logo {
+			text-align: center;
+			width: 150px;
+			height: 150px;
+			display: block;
+			margin: 40px auto;
+		}
+	}
+	.payment {
+		width: 65%;
+		background: #82D8D8;
+	}
 }
+
+
 table.cartlist {
 	width: 100%;
 	border: 0px;
