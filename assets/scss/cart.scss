@@ -14,6 +14,52 @@
 			display: block;
 			margin: 40px auto;
 		}
+
+		.cartlist {
+			.product {
+				display: flex;
+
+				.image {
+					flex: 0 0 50px;
+				}
+
+				.details {
+					flex-grow: 1;
+
+					h2 {
+						margin-bottom: 5px;
+					}
+					.quantity {
+						.qty {
+							display: inline-block;
+						}
+					}
+				}
+				
+				.price {
+					flex: 0 0 100px;
+					text-align: center;
+					border-left: 1px dotted #eee;
+
+					.oldprice {
+						display: block;
+						font-size: 18px;
+						text-decoration: line-through;
+					}
+					.onsale {
+						display: block;
+						font-size: 18px;
+					}
+
+					.discount {
+						display: block;
+						font-size: 14px;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+
 	}
 	.payment {
 		width: 65%;
@@ -22,57 +68,3 @@
 }
 
 
-table.cartlist {
-	width: 100%;
-	border: 0px;
-	margin-top: 35px; }
-table.cartlist td.image img {
-	width:120px;
-}
-table.cartlist thead,
-table.cartlist tr:nth-of-type(even) {
-	background: transparent; }
-table.cartlist thead th {
-	color: #757068;
-	font-weight: normal;
-	padding: 10px 0px; }
-table.cartlist tr.border {
-	border-bottom: 1px dotted #c8c6c3; }
-table.cartlist th,
-table.cartlist td {
-	width: 15%;
-	color: #757068;
-	padding: 20px 0px;
-	text-align: center;
-	vertical-align: top; }
-table.cartlist td a,
-table.cartlist td a:hover {
-	color: #757068;
-	text-decoration: none; }
-table.cartlist th:first-child,
-table.cartlist td:first-child {
-	width: 55%;
-	text-align: left; }
-table.cartlist td img {
-	float: left; }
-table.cartlist td p {
-	margin: 0px 0px 0px 145px; }
-table.cartlist td input {
-	width: 50%;
-	height: auto;
-	margin: 0px auto 5px; }
-table.cartlist td a {
-	display: block; }
-table.cartlist td strong {
-	display: block; }
-table.cartlist td strong.oldprice {
-	text-decoration: line-through; }
-table.cartlist td strong.onsale {
-	color: #87b32c; }
-table.cartlist td p.discount {
-	font-size: 12px;
-	margin: 0px;
-	padding-top: 5px;
-	line-height: normal; }
-table.cartlist tr.noticewrap td {
-	padding-top: 0px; }
