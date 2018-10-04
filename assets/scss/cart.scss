@@ -109,7 +109,15 @@
 				color: #FFF;
 			}
 			.button {
-				margin-top: 40px;
+				margin-top: 25px;
+			}
+
+			.split {
+				display: flex;
+
+				input {
+					flex: 0 0 50%;
+				}
 			}
 		}
 	}

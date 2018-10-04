@@ -51,11 +51,35 @@ export default class Cart extends Component {
                 </div>
                 
                 <div className="payment">
-                    <div class="step step1">
+                    <div class="step step1 hide">
                         <h2>Email Address</h2>
                         <p>Your email address is used to send receipts & will be </p>
                         <input type="text" placeholder="Your Email address" />
-                        <button className="button">Continue (1/4)</button>
+                        <button className="button">Continue</button>
+                    </div>
+                    <div class="step step2 hide">
+                        <h2>Payment Details</h2>
+                        <p>We'll get your delivery address after payment has been completed</p>
+                        <input type="text" placeholder="Card Number" />
+                        <input type="text" placeholder="CVV" />
+                        <input type="text" placeholder="Expiry" />
+                        <button className="button">Pay with Credit Card</button>
+                    </div>
+                    <div class="step step3 hide">
+                        <h2>Delivery Address</h2>
+                        <p>Where do you want your package shipped?</p>
+                        <input type="text" placeholder="Address" />
+                        <input type="text" placeholder="Suburb" />
+                        <input type="text" placeholder="City" />
+                        <input type="text" placeholder="Postcode" />
+                        <button className="button">Confirm Shipping Address</button>
+                    </div>
+                    <div class="step step4">
+                        <h2>Order Complete</h2>
+                        <p>Thanks for purchasing some goodies from us.</p>
+                        <p>We'll send you an update with your package details shortly.</p>
+                        <p>If you have any questions feel free </p>
+                        <button className="button">Back to homepage</button>
                     </div>
                 </div>
             </div>
