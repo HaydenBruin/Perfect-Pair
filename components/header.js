@@ -13,7 +13,7 @@ export default class Header extends Component {
                     <nav>
                         <ul>
                             <li><a>Account</a></li>
-                            <li><Link href="/cart"><a>Cart: 0 items</a></Link></li>
+                            <li><Link href="/checkout"><a>Cart: 0 items</a></Link></li>
                         </ul>
                     </nav>
                 </div>

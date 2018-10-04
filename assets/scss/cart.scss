@@ -92,13 +92,15 @@
 	.payment {
 		flex-grow: 1;
 		background: #74b9ff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		.step {
 			margin: 0px auto;
 			display: block;
 			width: 500px;
 			text-align: center;
-			padding-top: 200px;
 			
 			h2 {
 				font-size: 32px;
