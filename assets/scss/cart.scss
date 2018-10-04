@@ -2,7 +2,7 @@
 	display: flex;
 
 	.cart {
-		width: 35%;
+		flex: 0 0 450px;
 		background: #FFF;
 		border-right: 1px solid #eee;
 		min-height: 100vh;
@@ -16,11 +16,23 @@
 		}
 
 		.cartlist {
+			padding: 0px 15px;
+			margin-top: 100px;
+
+			.product:first-child {
+				border-top: 1px dotted #eee;
+			}
+
 			.product {
 				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 15px 0px;
+				border-bottom: 1px dotted #eee;
 
 				.image {
-					flex: 0 0 50px;
+					flex: 0 0 75px;
+					margin-right: 15px;
 				}
 
 				.details {
@@ -28,7 +40,9 @@
 
 					h2 {
 						margin-bottom: 5px;
+						font-size: 14px;
 					}
+
 					.quantity {
 						.qty {
 							display: inline-block;
@@ -37,33 +51,67 @@
 				}
 				
 				.price {
-					flex: 0 0 100px;
-					text-align: center;
+					flex: 0 0 75px;
 					border-left: 1px dotted #eee;
+					text-align: center;
 
 					.oldprice {
 						display: block;
-						font-size: 18px;
+						font-size: 12px;
 						text-decoration: line-through;
 					}
 					.onsale {
 						display: block;
-						font-size: 18px;
-					}
-
-					.discount {
-						display: block;
 						font-size: 14px;
-						margin-top: 10px;
+						font-weight: bold;
+						color: #0DBC79;
 					}
+				}
+			}
+
+			.total {
+				text-align: center;
+				width: 75px;
+				float: right;
+				padding-top: 15px;
+
+				.fullprice {
+					text-decoration: line-through;
+					font-size: 14px;
+				}
+
+				.saleprice {
+					font-size: 20px;
+					font-weight: bold;
+					color: #0DBC79;
 				}
 			}
 		}
 
 	}
 	.payment {
-		width: 65%;
-		background: #82D8D8;
+		flex-grow: 1;
+		background: #74b9ff;
+
+		.step {
+			margin: 0px auto;
+			display: block;
+			width: 500px;
+			text-align: center;
+			padding-top: 200px;
+			
+			h2 {
+				font-size: 32px;
+				margin-bottom: 15px;
+				color: #FFF;
+			}
+			p {
+				color: #FFF;
+			}
+			.button {
+				margin-top: 40px;
+			}
+		}
 	}
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../assets/scss/app.scss'
 
 export default class Cart extends Component {
     render() {
@@ -10,7 +11,7 @@ export default class Cart extends Component {
                     <div className="cartlist">
                         <div className="product">
                             <div className="image">
-                                <img src="/static/socks/noimage.jpg" alt="Product Title" />
+                                <img src="/static/noimage.jpg" alt="Product Title" />
                             </div>
                             <div className="details">
                                 <h2>Captain America Socks</h2>
@@ -23,15 +24,39 @@ export default class Cart extends Component {
                             <div className="price">
                                 <span className="oldprice">$11.99</span>
                                 <span className="onsale">$6.99</span>
-
-                                <span className="discount">You save<br />$10.00 (8.70%)</span>
                             </div>
+                        </div>
+                        <div className="product">
+                            <div className="image">
+                                <img src="/static/noimage.jpg" alt="Product Title" />
+                            </div>
+                            <div className="details">
+                                <h2>Spongebob Sqaurepants Socks</h2>
+                                <div className="quantity">
+                                    <div className="qty" ><img src="/static/minus.jpg" /></div>
+                                    <div className="qty">1</div>
+                                    <div className="qty"><img src="/static/plus.png" /></div>
+                                </div>
+                            </div>
+                            <div className="price">
+                                <span className="oldprice">$11.99</span>
+                                <span className="onsale">$6.99</span>
+                            </div>
+                        </div>
+                        <div className="total">
+                            <div class="fullprice">$21.99</div>
+                            <div class="saleprice">$13.98</div>
                         </div>
                     </div>
                 </div>
                 
                 <div className="payment">
-                    payment..
+                    <div class="step step1">
+                        <h2>Email Address</h2>
+                        <p>Your email address is used to send receipts & will be </p>
+                        <input type="text" placeholder="Your Email address" />
+                        <button className="button">Continue (1/4)</button>
+                    </div>
                 </div>
             </div>
         )
