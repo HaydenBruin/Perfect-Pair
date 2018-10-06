@@ -72,7 +72,7 @@ export default class Products extends Component {
                         this.products.map((product, index) => {
                             return (
                                 <div className="product" key={index}>
-                                    <Link href={`/products/${product.slug}`}><img src={product.img} className="productimg"/></Link>
+                                    <Link href={`/product/${product.slug}`}><img src={product.img} className="productimg"/></Link>
                                     <div className="details">
                                         <h2>{product.title}</h2>
                                         <div className="pricing">
