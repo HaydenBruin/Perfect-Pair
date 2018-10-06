@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Link from 'next/link'
 import AddToCart from './add-to-cart'
 
 export default class Products extends Component {
@@ -7,6 +8,7 @@ export default class Products extends Component {
         {
             id: 1,
             title: "Captain America",
+            slug: 'captain-america',
             img: "/static/socks/product1.jpg",
             price: 11.99,
             salePrice: 6.99,
@@ -15,6 +17,7 @@ export default class Products extends Component {
         {
             id: 2,
             title: "Pikachu Socks",
+            slug: 'pikachu-socks',
             img: "/static/socks/product2.jpg",
             price: 11.99,
             salePrice: 6.99,
@@ -23,6 +26,7 @@ export default class Products extends Component {
         {
             id: 3,
             title: "Avocado Lovers",
+            slug: 'avocado-loves',
             img: "/static/socks/product3.jpg",
             price: 11.99,
             salePrice: 6.99,
@@ -31,6 +35,7 @@ export default class Products extends Component {
         {
             id: 4,
             title: "Spiderman",
+            slug: 'spiderman',
             img: "/static/socks/product4.jpg",
             price: 11.99,
             salePrice: 6.99,
@@ -39,6 +44,7 @@ export default class Products extends Component {
         {
             id: 5,
             title: "Captain America",
+            slug: 'captain-america',
             img: "/static/socks/product1.jpg",
             price: 11.99,
             salePrice: 6.99,
@@ -47,6 +53,7 @@ export default class Products extends Component {
         {
             id: 6,
             title: "Pikachu Socks",
+            slug: 'pikachu-socks',
             img: "/static/socks/product2.jpg",
             price: 11.99,
             salePrice: 6.99,
@@ -65,7 +72,7 @@ export default class Products extends Component {
                         this.products.map((product, index) => {
                             return (
                                 <div className="product" key={index}>
-                                    <img src={product.img} className="productimg"/>
+                                    <Link href={`/products/${product.slug}`}><img src={product.img} className="productimg"/></Link>
                                     <div className="details">
                                         <h2>{product.title}</h2>
                                         <div className="pricing">
