@@ -1,7 +1,12 @@
-header {
-    padding: 30px;
-    display: flex;
+.accountbar {
+    background: #000000;
+    height: 41px;
+}
 
+header {
+    display: flex;
+    background: #333;
+    
     .column {
         flex: 1 0 25%;
     }
