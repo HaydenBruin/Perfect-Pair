@@ -31,12 +31,12 @@ export default class AddToCart extends Component {
 
     render() {
         return (
-            <div className="basket">
+            <div className="add-to-cart">
                 <div className="column">
                     <div className="quantity">
-                        <div className="qty" onClick={() => this.quanitityDown()}><img src="/static/minus.jpg" /></div>
+                        <div className="qty minus" onClick={() => this.quanitityDown()}></div>
                         <div className="qty">{this.state.addQty}</div>
-                        <div className="qty" onClick={() => this.quanitityUp()}><img src="/static/plus.png" /></div>
+                        <div className="qty plus" onClick={() => this.quanitityUp()}></div>
                     </div>
                 </div>
                 <div className="column">

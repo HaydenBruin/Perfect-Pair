@@ -1,0 +1,46 @@
+.products {
+    padding: 0px 0px;
+
+    h1 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .products-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .product {
+            flex: 0 0 25%;
+            transition: all 0.3s ease;
+
+            img {
+                height: 400px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .details {
+                padding: 30px;
+
+                h2 {
+                    font-weight: bold;
+                    font-size: 32px;
+                    margin-bottom: 15px;
+                }
+                .pricing {
+                    .price {
+                        font-size: 18px;
+                        text-decoration: line-through;
+                        display: inline-block;
+                    }
+                    .saleprice {
+                        font-size: 24px;
+                        display: inline-block;
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

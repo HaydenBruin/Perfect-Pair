@@ -12,12 +12,7 @@ export default class CartList extends Component {
                             <img src="/static/noimage.jpg" alt="Product Title" />
                         </div>
                         <div className="details">
-                            <h2>Captain America Socks</h2>
-                            <div className="quantity">
-                                <div className="qty" ><img src="/static/minus.jpg" /></div>
-                                <div className="qty">1</div>
-                                <div className="qty"><img src="/static/plus.png" /></div>
-                            </div>
+                            <h2>1 x Captain America Socks</h2>
                         </div>
                         <div className="price">
                             <span className="oldprice">$11.99</span>
@@ -29,12 +24,7 @@ export default class CartList extends Component {
                             <img src="/static/noimage.jpg" alt="Product Title" />
                         </div>
                         <div className="details">
-                            <h2>Spongebob Sqaurepants Socks</h2>
-                            <div className="quantity">
-                                <div className="qty" ><img src="/static/minus.jpg" /></div>
-                                <div className="qty">1</div>
-                                <div className="qty"><img src="/static/plus.png" /></div>
-                            </div>
+                            <h2>2 x Spongebob Sqaurepants Socks</h2>
                         </div>
                         <div className="price">
                             <span className="oldprice">$11.99</span>

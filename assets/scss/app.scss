@@ -1,5 +1,11 @@
 @import "reset.scss";
 @import "main.scss";
 @import "header.scss";
-@import "products.scss";
+
+// CART STYLES
 @import "cart.scss";
+@import "cart-qty.scss";
+
+// PRODUCT STYLES
+@import "products/product.scss";
+@import "products/product-details.scss";

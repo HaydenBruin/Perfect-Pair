@@ -65,8 +65,6 @@ export default class Products extends Component {
     render() {
         return (
             <div className="products">
-                <h1>Find your perfect sock</h1>
-                
                 <div className="products-list">
                     {
                         this.products.map((product, index) => {
