@@ -6,12 +6,9 @@ export default class Header extends Component {
     render() {
         return (
             <Fragment>
-                <div className="accountbar">
-
-                </div>
                 <header>
                     <div className="logo column">
-                        <Link href="/"><a><img src="/static/logo-white-nocircle.png" alt="Perfect Pair Logo" /></a></Link>
+                        <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
                     </div>
                     <div className="nav column">
                         <nav>

@@ -4,7 +4,54 @@ import AddToCart from './add-to-cart'
 
 export default class Products extends Component {
 
-    products = [
+    componentDidMount = () => {
+        console.log('fetching')
+        fetch('http://localhost:8000/api/products/', {
+            method: 'get',
+            mode: 'no-cors', 
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then(function(response) {
+            console.log('returne')
+            return response.json();
+        }).then(function(hey) {
+                console.log('made it this far')
+        }).catch(function(err) {
+            // Error :(
+        });
+    }
+
+    render() {
+        console.log('render');
+        return (
+            <div className="products">
+                <div className="products-list">
+                    {
+                        /*this.products.map((product, index) => {
+                            return (
+                                <div className="product" key={index}>
+                                    <Link href={`/product/${product.slug}`}><img src={product.img} className="productimg"/></Link>
+                                    <div className="details">
+                                        <h2>{product.title}</h2>
+                                        <div className="pricing">
+                                            <div className="saleprice">${product.salePrice}</div>
+                                            <div className="price">${product.price}</div>
+                                        </div>
+                                        <AddToCart product={product} />
+                                    </div>
+                                </div>
+                            )
+                        })*/
+                    }
+                </div>
+            </div>
+        )
+    }
+}
+
+/*
+products = [
         {
             id: 1,
             title: "Captain America",
@@ -61,30 +108,4 @@ export default class Products extends Component {
             
         }
     ]
-
-    render() {
-        return (
-            <div className="products">
-                <div className="products-list">
-                    {
-                        this.products.map((product, index) => {
-                            return (
-                                <div className="product" key={index}>
-                                    <Link href={`/product/${product.slug}`}><img src={product.img} className="productimg"/></Link>
-                                    <div className="details">
-                                        <h2>{product.title}</h2>
-                                        <div className="pricing">
-                                            <div className="saleprice">${product.salePrice}</div>
-                                            <div className="price">${product.price}</div>
-                                        </div>
-                                        <AddToCart product={product} />
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </div>
-        )
-    }
-}
+*/
