@@ -12,14 +12,9 @@ export default class Products extends Component {
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
-        }).then(function(response) {
-            console.log('returne')
-            return response.json();
-        }).then(function(hey) {
-                console.log('made it this far')
-        }).catch(function(err) {
-            // Error :(
-        });
+        }).then(response => response.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
     }
 
     render() {
