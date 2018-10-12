@@ -4,21 +4,28 @@ import AddToCart from './add-to-cart'
 
 export default class Products extends Component {
 
+    state = {
+        products: []
+    }
+
     componentDidMount = () => {
         console.log('fetching')
-        fetch('http://localhost:8000/api/products/', {
-            method: 'get',
-            mode: 'no-cors', 
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        }).then(response => response.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
+        if(!this.state.products)
+        {
+            fetch('http://localhost:8000/api/products/', {
+                method: 'get',
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(response => response.json())
+            .then(data => this.setState({ products: data }));
+        }
+        console.log(this.state);
     }
 
     render() {
         console.log('render');
+        console.log(this.state);
         return (
             <div className="products">
                 <div className="products-list">
