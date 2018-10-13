@@ -27,6 +27,13 @@ export default class AddToCart extends Component {
         console.log('ProductID: ',this.props.product.id)
         console.log('ProductQty: ',this.state.addQty);
         console.log('Product Max Stock: ',this.props.product.inventory);
+        fetch(`${process.env.API_URL}/api/products/`, {
+            method: 'post',
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then(response => response.json())
+        .then(data => this.setState({ products: data }));
     }
 
     render() {
