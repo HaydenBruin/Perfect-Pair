@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 export default class AddToCart extends Component {
 
     state = {
-        addQty: 1
+        addQty: 1,
+        cart: []
     }
 
     quanitityUp = () => {
@@ -27,16 +28,21 @@ export default class AddToCart extends Component {
         console.log('ProductID: ',this.props.product.id)
         console.log('ProductQty: ',this.state.addQty);
         console.log('Product Max Stock: ',this.props.product.inventory);
-        fetch(`${process.env.API_URL}/api/products/`, {
+        fetch(`${process.env.API_URL}/api/cart/add`, {
             method: 'post',
+            body: {
+                productId: this.props.product.id,
+                quantity: this.state.addQty
+            },
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
         }).then(response => response.json())
-        .then(data => this.setState({ products: data }));
+        .then(data => this.setState({ cart: data }));
     }
 
     render() {
+        console.log(this.state.cart);
         return (
             <div className="add-to-cart">
                 <div className="column">
