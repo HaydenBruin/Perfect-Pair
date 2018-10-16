@@ -23,26 +23,29 @@ export default class AddToCart extends Component {
         })
     }
 
-    addToCart = (id) => {
-        console.log('adding product to cart....')
-        console.log('ProductID: ',this.props.product.id)
-        console.log('ProductQty: ',this.state.addQty);
-        console.log('Product Max Stock: ',this.props.product.inventory);
+    addToCart = () => {
+        console.log('adding to cart');
+        const product = {
+            id: this.props.product.id,
+            quantity: this.state.addQty
+        }
+        console.log(product);
         fetch(`${process.env.API_URL}/api/cart/add`, {
-            method: 'post',
+            method: 'POST',
+            mode: 'cors',
+            credentials: 'include',
             body: {
-                productId: this.props.product.id,
-                quantity: this.state.addQty
+                productId: product.id,
+                quantity: product.quantity
             },
             headers: new Headers({
                 'Content-Type': 'application/json'
             })
         }).then(response => response.json())
-        .then(data => this.setState({ cart: data }));
+        .then(data => this.setState({ cart: data }) && console.log(data));
     }
 
     render() {
-        console.log(this.state.cart);
         return (
             <div className="add-to-cart">
                 <div className="column">
@@ -53,7 +56,7 @@ export default class AddToCart extends Component {
                     </div>
                 </div>
                 <div className="column">
-                    <div onClick={() => this.addToCart(this.props.product.id)} className="button">Add to cart</div>
+                    <div onClick={() => this.addToCart()} className="button">Add to cart</div>
                 </div>
             </div>
         )
