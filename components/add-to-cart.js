@@ -24,25 +24,32 @@ export default class AddToCart extends Component {
     }
 
     addToCart = () => {
-        console.log('adding to cart');
         const product = {
             id: this.props.product.id,
             quantity: this.state.addQty
         }
-        console.log(product);
         fetch(`${process.env.API_URL}/api/cart/add`, {
-            method: 'POST',
-            mode: 'cors',
+            method: 'post',
             credentials: 'include',
-            body: {
+            body: JSON.stringify({
                 productId: product.id,
                 quantity: product.quantity
-            },
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
+            }),
+            headers: {
+              "Content-Type": "application/json"
+            }
         }).then(response => response.json())
-        .then(data => this.setState({ cart: data }) && console.log(data));
+        .then(data => this.setState({ cart: data.cart }))
+        .then(() => {
+            fetch(`${process.env.API_URL}/api/cart`, {
+                method: 'get',
+                credentials: 'include',
+                headers: {
+                  "Content-Type": "application/json"
+                }
+            }).then(response => response.json())
+            .then(data => console.log(data));
+        });
     }
 
     render() {
