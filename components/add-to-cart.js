@@ -3,31 +3,15 @@ import React, { Component } from 'react'
 export default class AddToCart extends Component {
 
     state = {
-        addQty: 1,
-        cart: []
-    }
-
-    quanitityUp = () => {
-        let totalQty = this.state.addQty + 1;
-        if(totalQty >= this.props.product.inventory) totalQty = this.props.product.inventory;
-        this.setState({
-            addQty: totalQty
-        })
-    }
-
-    quanitityDown = () => {
-        let totalQty = this.state.addQty - 1;
-        if(totalQty <= 0) totalQty = 1;
-        this.setState({
-            addQty: totalQty
-        })
+        quantity: 1
     }
 
     addToCart = () => {
         const product = {
             id: this.props.product.id,
-            quantity: this.state.addQty
+            quantity: this.state.quantity
         }
+        console.log(product);
         fetch(`${process.env.API_URL}/api/cart/add`, {
             method: 'post',
             credentials: 'include',
@@ -51,15 +35,30 @@ export default class AddToCart extends Component {
         });
     }
 
+    updateQuantity = (event) => {
+        this.setState({
+            quantity: event.target.value
+        })
+    }
+
+    createOptions = () => {
+        let options = [];
+        for (let i = 1; i < 10; i++) {
+            if(i > this.props.product.inventory) break;
+            options.push(
+                <option key={i} value={i}>{i} Pair{i != 1 ? "s" : null}</option>
+            )
+        }
+        return options;
+    }
+
     render() {
         return (
             <div className="add-to-cart">
                 <div className="column">
-                    <div className="quantity">
-                        <div className="qty minus" onClick={() => this.quanitityDown()}></div>
-                        <div className="qty">{this.state.addQty}</div>
-                        <div className="qty plus" onClick={() => this.quanitityUp()}></div>
-                    </div>
+                    <select name="qty" onChange={this.updateQuantity}>
+                        {this.createOptions()}
+                    </select>
                 </div>
                 <div className="column">
                     <div onClick={() => this.addToCart()} className="button">Add to cart</div>
