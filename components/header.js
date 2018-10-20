@@ -5,8 +5,8 @@ export default class Header extends Component {
 
     render() {
         return (
-            <Fragment>
-                <header>
+            <header>
+                <div className="container">
                     <div className="logo column">
                         <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
                     </div>
@@ -18,8 +18,8 @@ export default class Header extends Component {
                             </ul>
                         </nav>
                     </div>
-                </header>
-            </Fragment>
+                </div>
+            </header>
         )
     }
 }

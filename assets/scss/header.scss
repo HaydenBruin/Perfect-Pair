@@ -1,27 +1,33 @@
 
 
 header {
-    display: flex;
+    padding: 15px 0px;
     
-    .column {
-        flex: 1 0 25%;
-    }
-    .column.logo {
-        flex-grow: 0;
-
-        img {
-            width: 128px;
-            height: 128px;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .column {
+            flex: 1 0 25%;
         }
-    }
-    .column.nav {
-        nav {
-            text-align: right;
+        .column.logo {
+            flex-grow: 0;
 
-            ul {
-                li {
-                    display: inline-block;
-                    margin-left: 15px;
+            img {
+                width: 128px;
+                height: 128px;
+            }
+        }
+        .column.nav {
+            nav {
+                text-align: right;
+
+                ul {
+                    li {
+                        display: inline-block;
+                        margin-left: 15px;
+                    }
                 }
             }
         }

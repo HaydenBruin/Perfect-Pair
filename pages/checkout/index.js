@@ -10,7 +10,7 @@ export default class Cart extends Component {
                 <CartList />
                 
                 <div className="payment">
-                    <div class="step step1">
+                    <div className="step step1">
                         <h2>Email Address</h2>
                         <p>Your email address is used to send receipts & will be </p>
                         <input type="text" placeholder="Your Email address" />

@@ -60,3 +60,18 @@ input {
 .hide {
     display: none !important;
 }
+
+/*** CONTAINERS ***/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: block;
+    margin: 0px auto;
+}
+
+/*** LOADING ***/
+.loading {
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+}
