@@ -47,8 +47,7 @@ export default class AddToCart extends Component {
                 headers: {
                   "Content-Type": "application/json"
                 }
-            }).then(response => response.json())
-            .then(data => console.log(data));
+            }).then(response => response.json());
         });
     }
 

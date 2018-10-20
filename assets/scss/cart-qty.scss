@@ -4,7 +4,7 @@
 
     .column {
         flex: 0 0 50%;
-        margin: 5px;
+        padding: 5px;
 
         .quantity {
             display: flex;
@@ -12,33 +12,33 @@
             .qty {
                 flex: 0 0 33.33%;
                 height: 50px;
-                width: 50px;
                 text-align: center;
                 line-height: 50px;
                 transition: background 0.3s ease;
+                font-size: 14px;
 
                 &.minus {
-                    background: #333 url(/static/minus.png) no-repeat;
+                    background: #74B9FF url(/static/minus.png) no-repeat;
                     background-repeat: no-repeat;
                     background-position: center;
                     border-radius: 5px;
 
                     &:hover {
                         cursor: pointer;
-                        background: #222 url(/static/minus.png) no-repeat;
+                        background: #2980b9 url(/static/minus.png) no-repeat;
                         background-repeat: no-repeat;
                         background-position: center;
                     }
                 }
                 &.plus {
-                    background: #333 url(/static/plus.png) no-repeat;
+                    background: #74B9FF url(/static/plus.png) no-repeat;
                     background-repeat: no-repeat;
                     background-position: center;
                     border-radius: 5px;
 
                     &:hover {
                         cursor: pointer;
-                        background: #222 url(/static/plus.png) no-repeat;
+                        background: #2980b9 url(/static/plus.png) no-repeat;
                         background-repeat: no-repeat;
                         background-position: center;
                     }
@@ -54,9 +54,10 @@
             text-align: center;
             transition: background 0.3s ease;
             font-size: 14px;
+            background: #74B9FF;
 
             &:hover {
-                background: #222;
+                background: #2980b9;
             }
         }
     }

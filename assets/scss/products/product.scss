@@ -16,6 +16,15 @@
             padding: 15px;
             font-size: 0px;
 
+            @media all and (max-width: 1024px)
+            {
+                flex: 0 0 50%;
+            }
+            @media all and (max-width: 767px)
+            {
+                flex: 0 0 100%;
+            }
+
             img {
                 height: 300px;
                 width: 100%;
@@ -24,25 +33,34 @@
 
             .details {
                 padding: 15px;
-                border-left: 1px solid #eee;
-                border-right: 1px solid #eee;
-                border-bottom: 1px solid #eee;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
-                h2 {
-                    font-weight: bold;
-                    font-size: 32px;
-                    margin-bottom: 15px;
+                .title {
+                    flex: 0 0 70%;
+
+                    h2 {
+                        font-weight: 300;
+                        font-size: 20px;
+                        margin: 0px;
+                    }
                 }
                 .pricing {
+                    flex: 0 0 30%;
+                    border-left: 1px dashed #ccc;
+                    text-align: center;
+
                     .price {
-                        font-size: 18px;
+                        display: block;
+                        font-size: 14px;
                         text-decoration: line-through;
-                        display: inline-block;
                     }
                     .saleprice {
-                        font-size: 24px;
-                        display: inline-block;
-                        margin-right: 15px;
+                        display: block;
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: #27ae60;
                     }
                 }
             }

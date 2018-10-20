@@ -39,13 +39,15 @@ export default class Products extends Component {
                                     <div className="product" key={index}>
                                         <Link href={`/product/${product.slug}`}><img src={product.image} className="productimg"/></Link>
                                         <div className="details">
-                                            <h2>{product.title}</h2>
+                                            <div className="title">
+                                                <h2>{product.title}</h2>
+                                            </div>
                                             <div className="pricing">
                                                 <div className="saleprice">${product.saleprice}</div>
                                                 <div className="price">${product.price}</div>
                                             </div>
-                                            <AddToCart product={product} />
                                         </div>
+                                        <AddToCart product={product} />
                                     </div>
                                 )
                             })
