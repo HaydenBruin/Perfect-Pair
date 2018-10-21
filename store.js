@@ -11,7 +11,7 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
 
-        case ADD_PRODUCT_TO_CART:
+        case UPDATE_CART:
             return Object.assign({}, state, {
                 cartOverview: action.payload.overview,
                 cartProducts: action.payload.products
@@ -23,10 +23,10 @@ export const reducer = (state = initialState, action) => {
 
 
 // ACTIONS
-const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART'
+const UPDATE_CART = 'UPDATE_CART'
 
-export const addProductToCart = (cart) => ({
-    type: ADD_PRODUCT_TO_CART,
+export const updateCart = (cart) => ({
+    type: UPDATE_CART,
     payload: cart
 })
 

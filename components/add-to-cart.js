@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addProductToCart } from '../store'
+import { updateCart } from '../store'
 
 class AddToCart extends Component {
 
@@ -34,7 +34,7 @@ class AddToCart extends Component {
                 }
             }).then(response => response.json())
             .then(data => {
-                this.props.dispatch(addProductToCart(data.cart))
+                this.props.dispatch(updateCart(data.cart))
             });
         });
     }

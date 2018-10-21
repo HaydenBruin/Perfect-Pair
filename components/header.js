@@ -1,8 +1,25 @@
 import React, { Fragment, Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'next/link'
+import { updateCart } from '../store'
 
 class Header extends Component {
+
+    componentDidMount = () => {
+        if(this.props.cartProducts.length === 0)
+        {
+            fetch(`${process.env.API_URL}/api/cart`, {
+                method: 'get',
+                credentials: 'include',
+                headers: {
+                  "Content-Type": "application/json"
+                }
+            }).then(response => response.json())
+            .then(data => {
+                this.props.dispatch(updateCart(data.cart))
+            });
+        }
+    }
 
     render() {
         return (
