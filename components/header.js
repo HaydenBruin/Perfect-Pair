@@ -1,7 +1,8 @@
 import React, { Fragment, Component } from 'react'
+import { connect } from 'react-redux'
 import Link from 'next/link'
 
-export default class Header extends Component {
+class Header extends Component {
 
     render() {
         return (
@@ -14,7 +15,7 @@ export default class Header extends Component {
                         <nav>
                             <ul>
                                 <li><a>Account</a></li>
-                                <li><Link href="/checkout"><a>Cart: 0 items</a></Link></li>
+                                <li><Link href="/checkout"><a>Cart: {this.props.cartProducts.length} items</a></Link></li>
                             </ul>
                         </nav>
                     </div>
@@ -23,3 +24,11 @@ export default class Header extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    cartOverview: state.cartOverview,
+    cartProducts: state.cartProducts
+
+})
+
+export default connect(mapStateToProps)(Header)

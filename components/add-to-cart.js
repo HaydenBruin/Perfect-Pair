@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { addProductToCart } from '../store'
 
-export default class AddToCart extends Component {
+class AddToCart extends Component {
 
     state = {
         quantity: 1
@@ -12,7 +13,7 @@ export default class AddToCart extends Component {
             id: this.props.product.id,
             quantity: this.state.quantity
         }
-        console.log(product);
+
         fetch(`${process.env.API_URL}/api/cart/add`, {
             method: 'post',
             credentials: 'include',
@@ -24,15 +25,17 @@ export default class AddToCart extends Component {
               "Content-Type": "application/json"
             }
         }).then(response => response.json())
-        .then(data => this.setState({ cart: data.cart }))
-        .then(() => {
+        .then(data => {
             fetch(`${process.env.API_URL}/api/cart`, {
                 method: 'get',
                 credentials: 'include',
                 headers: {
                   "Content-Type": "application/json"
                 }
-            }).then(response => response.json());
+            }).then(response => response.json())
+            .then(data => {
+                this.props.dispatch(addProductToCart(data.cart))
+            });
         });
     }
 

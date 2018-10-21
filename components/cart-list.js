@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Loading from "../components/loading";
+import Loading from "../components/loading"
+import Link from 'next/link'
 
 export default class CartList extends Component {
 
@@ -38,7 +39,7 @@ export default class CartList extends Component {
         return (
             <div className="cart">
                 <div className="logo">
-                    <img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" />
+                    <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
                 </div>
                 
                 <div className="cartlist">
