@@ -9,9 +9,16 @@
     "@zeit/next-sass": "^1.0.1",
     "dotenv": "^6.1.0",
     "next": "^7.0.1",
+    "next-redux-wrapper": "^2.0.0",
     "next-routes": "^1.4.2",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.5"
   }
 }

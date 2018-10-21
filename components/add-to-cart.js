@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 export default class AddToCart extends Component {
 
@@ -67,3 +68,5 @@ export default class AddToCart extends Component {
         )
     }
 }
+
+export default connect()(AddToCart);
