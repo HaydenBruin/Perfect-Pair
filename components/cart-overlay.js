@@ -4,15 +4,20 @@ import Link from 'next/link'
 
 export class CartOverlay extends Component {
 
+    toggleCartOverlay = () => {
+        document.querySelector('.cart-overlay').classList.remove('active');
+    }
+
     render() {
         return (
-            <div className={this.props.showing ? "cart-overlay active" : "cart-overlay"}>
-                <div className="overlay">
-                    <div class="split">
-                        <div class="column">
+            <div className="cart-overlay">
+                <div className="cart-overlay-background" onClick={this.toggleCartOverlay}></div>
+                <div className="cart-overlay-content">
+                    <div className="split">
+                        <div className="column">
                             <h1>Your bag</h1>
                         </div>
-                        <div class="column">
+                        <div className="column">
                             {this.props.cartProducts.length} items
                         </div>
                     </div>
@@ -44,13 +49,13 @@ export class CartOverlay extends Component {
                     <div className="actions">
                         <div className="split">
                             <div className="column">
-                                <div class="action">
-                                    <Link href="/"><a className="button">Continue Shopping</a></Link>
+                                <div className="action">
+                                    <a className="button" onClick={this.toggleCartOverlay}>Continue Shopping</a>
                                 </div>
                             </div>
                             <div className="column">
-                                <div class="action">
-                                    <Link href="/"><a className="button">Checkout</a></Link>
+                                <div className="action">
+                                    <Link href="/checkout"><a className="button">Checkout</a></Link>
                                 </div>
                             </div>
                         </div>

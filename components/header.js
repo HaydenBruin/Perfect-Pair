@@ -22,6 +22,10 @@ class Header extends Component {
         }
     }
 
+    toggleCartOverlay = () => {
+        document.querySelector('.cart-overlay').classList.toggle('active');
+    }
+
     render() {
         return (
             <Fragment>
@@ -34,7 +38,7 @@ class Header extends Component {
                         <div className="nav column">
                             <nav>
                                 <ul>
-                                    <li><Link href="/checkout"><a>Cart: {this.props.cartProducts.length} items</a></Link></li>
+                                    <li onClick={this.toggleCartOverlay}>Cart: {this.props.cartProducts.length} items</li>
                                 </ul>
                             </nav>
                         </div>

@@ -35,6 +35,7 @@ class AddToCart extends Component {
             }).then(response => response.json())
             .then(data => {
                 this.props.dispatch(updateCart(data.cart))
+                document.querySelector('.cart-overlay').classList.add('active');
             });
         });
     }
