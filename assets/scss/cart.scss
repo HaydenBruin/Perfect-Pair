@@ -16,113 +16,113 @@
 				height: 150px;
 			}
 		}
+	}
+}
 
-		.cartlist {
-			padding: 0px 15px;
-			padding-top: 50px;
 
-			.product:first-child {
-				border-top: 1px dotted #eee;
-			}
+.cartlist {
+	padding: 0px 15px;
+	padding-top: 50px;
 
-			.product {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding: 15px 0px;
-				border-bottom: 1px dotted #eee;
+	.product:first-child {
+		border-top: 1px dotted #eee;
+	}
 
-				.image {
-					flex: 0 0 75px;
-					margin-right: 15px;
-				}
+	.product {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 15px 0px;
+		border-bottom: 1px dotted #eee;
 
-				.details {
-					flex-grow: 1;
-
-					h2 {
-						margin-bottom: 5px;
-						font-size: 14px;
-					}
-
-					.amount {
-						font-size: 14px;
-					}
-				}
-				
-				.price {
-					flex: 0 0 75px;
-					border-left: 1px dotted #eee;
-					text-align: center;
-
-					.oldprice {
-						display: block;
-						font-size: 12px;
-						text-decoration: line-through;
-					}
-					.onsale {
-						display: block;
-						font-size: 14px;
-						font-weight: bold;
-						color: #0DBC79;
-					}
-				}
-			}
-
-			.total {
-				text-align: center;
-				width: 75px;
-				float: right;
-				padding-top: 15px;
-
-				.fullprice {
-					text-decoration: line-through;
-					font-size: 14px;
-				}
-
-				.saleprice {
-					font-size: 20px;
-					font-weight: bold;
-					color: #0DBC79;
-				}
-			}
+		.image {
+			flex: 0 0 75px;
+			margin-right: 15px;
 		}
 
-	}
-	.payment {
-		flex-grow: 1;
-		background: #74b9ff;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		.details {
+			flex-grow: 1;
 
-		.step {
-			margin: 0px auto;
-			display: block;
-			width: 500px;
-			text-align: center;
-			
 			h2 {
-				font-size: 32px;
-				margin-bottom: 15px;
-				color: #FFF;
-			}
-			p {
-				color: #FFF;
-			}
-			.button {
-				margin-top: 25px;
+				margin-bottom: 5px;
+				font-size: 14px;
 			}
 
-			.split {
-				display: flex;
-
-				input {
-					flex: 0 0 50%;
-				}
+			.amount {
+				font-size: 14px;
 			}
+		}
+		
+		.price {
+			flex: 0 0 75px;
+			border-left: 1px dotted #eee;
+			text-align: center;
+
+			.oldprice {
+				display: block;
+				font-size: 14px;
+				text-decoration: line-through;
+			}
+			.onsale {
+				display: block;
+				font-size: 16px;
+				font-weight: bold;
+				color: #0DBC79;
+			}
+		}
+	}
+
+	.total {
+		text-align: center;
+		width: 75px;
+		margin-left: auto;
+		padding-top: 15px;
+
+		.fullprice {
+			text-decoration: line-through;
+			font-size: 14px;
+		}
+
+		.saleprice {
+			font-size: 20px;
+			font-weight: bold;
+			color: #0DBC79;
 		}
 	}
 }
 
 
+.payment {
+	flex-grow: 1;
+	background: #74b9ff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.step {
+		margin: 0px auto;
+		display: block;
+		width: 500px;
+		text-align: center;
+		
+		h2 {
+			font-size: 32px;
+			margin-bottom: 15px;
+			color: #FFF;
+		}
+		p {
+			color: #FFF;
+		}
+		.button {
+			margin-top: 25px;
+		}
+
+		.split {
+			display: flex;
+
+			input {
+				flex: 0 0 50%;
+			}
+		}
+	}
+}
