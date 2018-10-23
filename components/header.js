@@ -7,19 +7,16 @@ import CartOverlay from '../components/cart-overlay'
 class Header extends Component {
 
     componentDidMount = () => {
-        if(this.props.cartProducts.length === 0)
-        {
-            fetch(`${process.env.API_URL}/api/cart`, {
-                method: 'get',
-                credentials: 'include',
-                headers: {
-                  "Content-Type": "application/json"
-                }
-            }).then(response => response.json())
-            .then(data => {
-                this.props.dispatch(updateCart(data.cart))
-            });
-        }
+        fetch(`${process.env.API_URL}/api/cart`, {
+            method: 'get',
+            credentials: 'include',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            this.props.dispatch(updateCart(data.cart))
+        });
     }
 
     toggleCartOverlay = () => {

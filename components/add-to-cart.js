@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateCart } from '../store'
+import PropTypes from 'prop-types'
 
 class AddToCart extends Component {
 
@@ -73,4 +74,7 @@ class AddToCart extends Component {
     }
 }
 
+AddToCart.propTypes = {
+    quantity: PropTypes.number
+}
 export default connect()(AddToCart);

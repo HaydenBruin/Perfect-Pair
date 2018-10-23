@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
+import { Link } from '../routes'
 import AddToCart from './add-to-cart'
 import Loading from "../components/loading";
 
@@ -37,7 +37,9 @@ export default class Products extends Component {
                             this.state.products.map((product, index) => {
                                 return (
                                     <div className="product" key={index}>
-                                        <Link href={`/product/${product.slug}`}><img src={product.image} className="productimg"/></Link>
+                                        <Link route={`/product/${product.slug}/${product.id}`}>
+                                            <a><img src={product.image} className="productimg"/></a>
+                                        </Link>
                                         <div className="details">
                                             <div className="title">
                                                 <h2>{product.title}</h2>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import CartList from '../components/cart-list'
 import Link from 'next/link'
 
 export class CartOverlay extends Component {
@@ -15,37 +16,15 @@ export class CartOverlay extends Component {
                 <div className="cart-overlay-content">
                     <div className="split">
                         <div className="column">
-                            <h1>Your bag</h1>
+                            <h1>Your bag ({this.props.cartProducts.length} item(s))</h1>
                         </div>
                         <div className="column">
-                            {this.props.cartProducts.length} items
+                            <div className="close" onClick={this.toggleCartOverlay}>X</div>
                         </div>
                     </div>
-                    <div className="cartlist">
-                        {
-                            this.props.cartProducts.map((product, index) => {
-                                return (
-                                    <div className="product" key={index}>
-                                        <div className="image">
-                                            <img src={product.image} alt={product.title} />
-                                        </div>
-                                        <div className="details">
-                                            <h2>{product.title}</h2>
-                                        </div>
-                                        <div className="price">
-                                            <span className="oldprice">${product.price}</span>
-                                            <span className="onsale">${product.saleprice}</span>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
+                    
+                    <CartList />
 
-                        <div className="total">
-                            <div className="fullprice">${parseInt(this.props.cartOverview.totalPrice) + parseInt(this.props.cartOverview.totalSavings)}</div>
-                            <div className="saleprice">${this.props.cartOverview.totalPrice}</div>
-                        </div>
-                    </div>
                     <div className="actions">
                         <div className="split">
                             <div className="column">
