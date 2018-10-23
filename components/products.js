@@ -8,7 +8,7 @@ export default class Products extends Component {
     state = {
         products: []
     }
-
+    
     componentDidMount = () => {
         if(this.state.products.length === 0)
         {
