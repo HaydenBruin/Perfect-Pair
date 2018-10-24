@@ -35,7 +35,10 @@ class Header extends Component {
                         <div className="nav column">
                             <nav>
                                 <ul>
-                                    <li onClick={this.toggleCartOverlay}>Cart: {this.props.cartProducts.length} items</li>
+                                    <li onClick={this.toggleCartOverlay} className="cart-nav">
+                                        <img src="/static/shopping-bag.png" />
+                                        <div className="counter">{this.props.cartProducts.length}</div>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
