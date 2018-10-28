@@ -3,7 +3,10 @@
 header {
     padding: 15px 0px;
     border-bottom: 1px solid #eee;
+    background: #FFF;
     margin-bottom: 30px;
+    position: sticky;
+    top: 0;
     
     .container {
         display: flex;

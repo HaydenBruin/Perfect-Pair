@@ -7,6 +7,8 @@ import CartOverlay from '../components/cart-overlay'
 class Header extends Component {
 
     componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll);
+
         fetch(`${process.env.API_URL}/api/cart`, {
             method: 'get',
             credentials: 'include',
@@ -14,9 +16,17 @@ class Header extends Component {
                 "Content-Type": "application/json"
             }
         }).then(response => response.json())
-        .then(data => {
-            this.props.dispatch(updateCart(data.cart))
-        });
+            .then(data => {
+                this.props.dispatch(updateCart(data.cart))
+            });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        
     }
 
     toggleCartOverlay = () => {
