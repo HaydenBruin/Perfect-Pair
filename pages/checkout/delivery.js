@@ -7,7 +7,12 @@ export default class Payment extends Component {
     render() {
         return (
             <div className="checkout">
-                <CartList />
+                <div className="cart">
+                    <div className="logo">
+                        <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
+                    </div>
+                    <CartList />
+                </div>
 
                 <div className="payment">
                     <div class="step step3">

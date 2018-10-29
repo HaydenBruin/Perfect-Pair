@@ -10,7 +10,12 @@ export default class index extends Component {
             <Fragment>
                 <Head>
                     <title>Perfect Pair - Say it with socks</title>
-                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                    <meta name="theme-color" content="#000000" />
+
+                    <script src="https://js.stripe.com/v3/"></script>
                 </Head>
                 <DefaultLayout>
                     <Products />

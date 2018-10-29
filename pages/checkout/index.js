@@ -1,25 +1,29 @@
 import React, { Component } from 'react'
 import CartList from '../../components/cart-list'
-import Link from 'next/link'
+import { Link, Router } from '../../routes'
 import '../../assets/scss/app.scss'
 
 export default class Cart extends Component {
 
     handleForm = (e) => {
-        // /checkout/payment
         e.preventDefault();
-        const formData = new FormData(document.querySelector('#checkout_step1'));
-console.log(formData);
+
         fetch(`${process.env.API_URL}/api/checkout/email`, {
             method: 'post',
-            credentials: 'include',
-            body: formData,
+            body: JSON.stringify({
+                email_address: document.querySelector('input[name=email_address]').value
+            }),
             headers: {
-              "Content-Type": "application/json"
+                "Content-Type": "application/json"
             }
         }).then(response => response.json())
         .then(data => {
-            console.log(data);
+            if(data['status'] === "success") {    
+                Router.pushRoute('/checkout/payment');
+            }
+            else {
+                alert('get a unique email pls');
+            }
         });
     }
 
