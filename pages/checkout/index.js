@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CartList from '../../components/cart-list'
+import DefaultLayout from '../../components/layouts/default-layout'
 import { Link, Router } from '../../routes'
 import '../../assets/scss/app.scss'
 
@@ -29,25 +30,27 @@ export default class Cart extends Component {
 
     render() {
         return (
-            <div className="checkout">
-                <div className="cart">
-                    <div className="logo">
-                        <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
+            <DefaultLayout disableHeader="true">
+                <div className="checkout">
+                    <div className="cart">
+                        <div className="logo">
+                            <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
+                        </div>
+                        <CartList />
                     </div>
-                    <CartList />
-                </div>
-                
-                <div className="payment">
-                    <div className="step step1">
-                        <form id="checkout_step1" onSubmit={this.handleForm}>
-                            <h2>Email Address</h2>
-                            <p>Your email address is used to send receipts</p>
-                            <input type="text" name="email_address" placeholder="Your Email address" />
-                            <button className="button">Continue</button>
-                        </form>
+                    
+                    <div className="payment">
+                        <div className="step step1">
+                            <form id="checkout_step1" onSubmit={this.handleForm}>
+                                <h2>Email Address</h2>
+                                <p>Your email address is used to send receipts</p>
+                                <input type="text" name="email_address" placeholder="Your Email address" />
+                                <button className="button">Continue</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </DefaultLayout>
         )
     }
 }

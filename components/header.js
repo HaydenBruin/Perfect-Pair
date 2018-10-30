@@ -1,24 +1,12 @@
 import React, { Fragment, Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'next/link'
-import { updateCart } from '../store'
 import CartOverlay from '../components/cart-overlay'
 
 class Header extends Component {
 
     componentDidMount = () => {
         window.addEventListener('scroll', this.handleScroll);
-
-        fetch(`${process.env.API_URL}/api/cart`, {
-            method: 'get',
-            credentials: 'include',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }).then(response => response.json())
-            .then(data => {
-                this.props.dispatch(updateCart(data.cart))
-            });
     }
 
     componentWillUnmount() {
@@ -26,7 +14,7 @@ class Header extends Component {
     }
 
     handleScroll = () => {
-        
+
     }
 
     toggleCartOverlay = () => {
