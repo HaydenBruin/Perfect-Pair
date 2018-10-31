@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Router } from '../../routes'
 import { injectStripe, CardElement } from 'react-stripe-elements'
 
 class CheckoutForm extends Component {
@@ -10,26 +11,31 @@ class CheckoutForm extends Component {
     }
 
     async submit(ev) {
-        let token = await this.props.stripe.createToken({ name: 'Name' });
-        console.log(token);
+        let generatedToken = await this.props.stripe.createToken();
+        console.log(generatedToken.token.id);
         let response = await fetch(`${process.env.API_URL}/api/checkout/payment`, {
-            method: "POST",
-            headers: { "Content-Type": "text/plain" },
-            body: token.id
+            method: "post",
+            credentials: 'include',
+            body: JSON.stringify({
+                tokenId: generatedToken.token.id,
+            }),
+            headers: { 'Content-Type': 'application/json' }
         });
 
-        if (response.ok) this.setState({ complete: true });
+        if (response.ok)
+        {
+            Router.pushRoute('/checkout/completed');
+        }
     }
 
     render() {
-        if (this.state.complete) return <h1>Purchase Complete</h1>;
         return (
             <div className="payment">
                 <div className="step step2">
                     <h2>Payment Details</h2>
                     <p>We'll get your delivery address after payment has been completed</p>
 
-                    <CardElement />
+                    <CardElement hidePostalCode={true} />
                     <button onClick={this.submit}>Send</button>
                 </div>
             </div>

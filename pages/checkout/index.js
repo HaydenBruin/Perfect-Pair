@@ -11,6 +11,7 @@ export default class Cart extends Component {
 
         fetch(`${process.env.API_URL}/api/checkout/email`, {
             method: 'post',
+            credentials: 'include',
             body: JSON.stringify({
                 email_address: document.querySelector('input[name=email_address]').value
             }),
@@ -20,7 +21,7 @@ export default class Cart extends Component {
         }).then(response => response.json())
         .then(data => {
             if(data['status'] === "success") {    
-                Router.pushRoute('/checkout/payment');
+                Router.pushRoute('/checkout/delivery');
             }
             else {
                 alert('get a unique email pls');
@@ -44,6 +45,7 @@ export default class Cart extends Component {
                             <form id="checkout_step1" onSubmit={this.handleForm}>
                                 <h2>Email Address</h2>
                                 <p>Your email address is used to send receipts</p>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                                 <input type="text" name="email_address" placeholder="Your Email address" />
                                 <button className="button">Continue</button>
                             </form>
