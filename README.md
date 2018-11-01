@@ -4,11 +4,11 @@ PerfectPair is an ecommerce platform, it's branded for PerfectPair but can be fo
 
 It uses React & Next.js on the client side and a few other packages.
 
-Other Packages:
-SASS
-Next Routes (Dynamic Routing)
-Redux/React-Redux
-Stripe Elements (Payment gateway is stripe)
+** Other Packages: **
+* SASS
+* Next Routes (Dynamic Routing)
+* Redux/React-Redux
+* Stripe Elements (Payment gateway is stripe)
 
 # Installing #
 
