@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Header from '../header'
 import { updateCart } from '../../store'
 import { StripeProvider } from 'react-stripe-elements'
+import '../../assets/scss/app.scss'
 
 class DefaultLayout extends Component {
     constructor() {

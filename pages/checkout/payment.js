@@ -4,7 +4,6 @@ import CartList from '../../components/cart-list'
 import CheckoutForm from './checkout-form'
 import { Elements } from 'react-stripe-elements'
 import Link from 'next/link'
-import '../../assets/scss/app.scss'
 
 class Payment extends Component {
 

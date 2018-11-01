@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import DefaultLayout from '../../components/layouts/default-layout'
 import AddToCart from '../../components/add-to-cart'
-import '../../assets/scss/app.scss'
 
 export default class Product extends Component {
 

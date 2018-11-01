@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import CartList from '../../components/cart-list'
 import DefaultLayout from '../../components/layouts/default-layout'
 import { Link, Router } from '../../routes'
-import '../../assets/scss/app.scss'
 
 export default class Cart extends Component {
 
@@ -45,7 +44,6 @@ export default class Cart extends Component {
                             <form id="checkout_step1" onSubmit={this.handleForm}>
                                 <h2>Email Address</h2>
                                 <p>Your email address is used to send receipts</p>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}"></input>
                                 <input type="text" name="email_address" placeholder="Your Email address" />
                                 <button className="button">Continue</button>
                             </form>
