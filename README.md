@@ -18,7 +18,7 @@ Pull down the repo on your end (git init & git remote add origin <your repo url>
 
 Use "npm install" to install all of the project's npm packages.
 
-Then npm run dev to boot & go to http://127.0.0.1:3000 (http://localhost:3000 causes issues with fetch API).
+Then "npm run dev" to boot & go to http://127.0.0.1:3000 (http://localhost:3000 causes issues with fetch API).
 
 # Contact #
 
