@@ -5,6 +5,22 @@ body {
     font-family: 'Montserrat', sans-serif;
     padding: 0px;
     margin: 0px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        background: #0f8a9d;
+        background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+        -webkit-transform-origin: 0;
+        transform-origin: 0;
+        -webkit-transform: skewY(-12deg);
+        transform: skewY(-12deg);
+        z-index: -1;
+    }
 }
 
 h1,h2,h3,h4,h5,h6 {    

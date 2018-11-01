@@ -33,31 +33,8 @@ class CheckoutForm extends Component {
                     <h2>Payment Details</h2>
                     <p>We'll get your delivery address after payment has been completed</p>
 
-                    <CardElement hidePostalCode={true} style={{
-                            base: {
-                                iconColor: '#c4f0ff',
-                                background: '#FFF',
-                                color: '#333',
-                                fontWeight: 500,
-                                fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
-                                fontSize: '16px',
-                                fontSmoothing: 'antialiased',
-
-                                ':-webkit-autofill': {
-                                    color: '#fce883',
-                                },
-                                '::placeholder': {
-                                    color: '#87BBFD',
-                                },
-                            },
-                            invalid: {
-                                iconColor: '#FFC7EE',
-                                color: '#FFC7EE',
-                            },
-                        }}
-
-                        />
-                        <button onClick={this.submit}>Send</button>
+                    <CardElement hidePostalCode={true} />
+                    <button onClick={this.submit}>Send</button>
                 </div>
             </div>
                 )
