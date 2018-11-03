@@ -37,7 +37,7 @@ class CheckoutForm extends Component {
                     <button onClick={this.submit}>Send</button>
                 </div>
             </div>
-                )
-            }
-        }
+        )
+    }
+}
 export default injectStripe(CheckoutForm)

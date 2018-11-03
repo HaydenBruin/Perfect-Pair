@@ -22,23 +22,19 @@ class Header extends Component {
     }
 
     render() {
+        console.log(this.props.cartOverview);
         return (
             <Fragment>
                 <CartOverlay />
                 <header>
                     <div className="container">
                         <div className="logo column">
-                            <Link href="/"><a><img src="/static/logo-circle-pp-blue.png" alt="Perfect Pair Logo" /></a></Link>
+                            <Link href="/"><a><img src="/static/logo.png" alt="Perfect Pair Logo" /></a></Link>
                         </div>
                         <div className="nav column">
-                            <nav>
-                                <ul>
-                                    <li onClick={this.toggleCartOverlay} className="cart-nav">
-                                        <img src="/static/shopping-bag.png" />
-                                        <div className="counter">{this.props.cartProducts.length}</div>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <div className="overview" onClick={this.toggleCartOverlay}>
+                                {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD
+                            </div>
                         </div>
                     </div>
                 </header>
