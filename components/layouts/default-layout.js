@@ -1,11 +1,26 @@
 import React, { Fragment, Component } from 'react'
+
+// REDUX
 import { connect } from 'react-redux'
+import { updateCart } from '../../store'
+
+// ELEMENTS
 import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer';
-import { updateCart } from '../../store'
+
+// STRIPE
 import { StripeProvider } from 'react-stripe-elements'
+
+// SCSS
 import '../../assets/scss/app.scss'
+
+// FONT AWESOME
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart, faTruck, faCreditCard, faCheck } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faShoppingCart, faTruck, faCreditCard, faCheck)
 
 class DefaultLayout extends Component {
     constructor() {
@@ -39,6 +54,7 @@ class DefaultLayout extends Component {
                     <meta name="theme-color" content="#000000" />
 
                     <script src="https://js.stripe.com/v3/"></script>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 </Head>
                 <StripeProvider stripe={this.state.stripe}>
                     <Fragment>
