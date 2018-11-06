@@ -12,7 +12,7 @@ export default class Products extends Component {
     componentDidMount = () => {
         if(this.state.products.length === 0)
         {
-            fetch(`${process.env.API_URL}/api/products/`, {
+            fetch(`${process.env.API_URL}/api/products`, {
                 method: 'get',
                 headers: new Headers({
                     'Content-Type': 'application/json'
