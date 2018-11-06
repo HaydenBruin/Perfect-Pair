@@ -4,17 +4,10 @@ import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer';
 import { updateCart } from '../../store'
-import { StripeProvider } from 'react-stripe-elements'
 import '../../assets/scss/app.scss'
 
 class DefaultLayout extends Component {
-    constructor() {
-        super();
-        this.state = { stripe: null };
-    }
     componentDidMount() {
-        this.setState({ stripe: window.Stripe('pk_test_xxaqpzviIbXJ63m1TPUhoyz8') });
-        
         fetch(`${process.env.API_URL}/api/cart`, {
             method: 'get',
             credentials: 'include',
@@ -40,13 +33,9 @@ class DefaultLayout extends Component {
 
                     <script src="https://js.stripe.com/v3/"></script>
                 </Head>
-                <StripeProvider stripe={this.state.stripe}>
-                    <Fragment>
-                        { headerElement }
-                        {this.props.children}
-                        { footerElement }
-                    </Fragment>
-                </StripeProvider>
+                { headerElement }
+                {this.props.children}
+                { footerElement }
             </Fragment>
         )
     }
