@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import CartList from '../../components/cart-list'
 import DefaultLayout from '../../components/layouts/default-layout'
-import { Link, Router } from '../../routes'
+import { Router } from '../../routes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Payment extends Component {
@@ -34,12 +33,12 @@ export default class Payment extends Component {
 
     render() {
         return (
-            <DefaultLayout disableHeader="true" disableFooter="true">
+            <DefaultLayout disableHeader={true} disableFooter={true}>
                 <div className="checkout">
                     <div className="check">
                         <div className="steps">
                             <div className="step completed"><div className="circle"><FontAwesomeIcon icon="shopping-cart" /></div>Email</div>
-                            <div className="step"><div className="circle"><FontAwesomeIcon icon="truck" /></div>Delivery</div>
+                            <div className="step completed"><div className="circle"><FontAwesomeIcon icon="truck" /></div>Delivery</div>
                             <div className="step"><div className="circle"><FontAwesomeIcon icon="credit-card" /></div>Payment</div>
                             <div className="step"><div className="circle"><FontAwesomeIcon icon="check" /></div>Completed</div>
                         </div>

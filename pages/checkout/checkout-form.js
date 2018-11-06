@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
 import { Router } from '../../routes'
-import { CardElement } from 'react-stripe-elements'
+import { injectStripe, CardElement } from 'react-stripe-elements'
 
 class CheckoutForm extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { complete: false };
+        this.state = {
+            complete: false
+        };
         this.submit = this.submit.bind(this);
-    }
-
-    constructor() {
-        super();
-        this.state = { stripe: null };
-    }
-    componentDidMount() {
-        this.setState({ stripe: window.Stripe('pk_test_xxaqpzviIbXJ63m1TPUhoyz8') });
     }
 
     async submit(ev) {
@@ -48,4 +42,4 @@ class CheckoutForm extends Component {
         )
     }
 }
-export default CheckoutForm
+export default injectStripe(CheckoutForm)

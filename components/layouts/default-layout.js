@@ -19,6 +19,7 @@ import { faShoppingCart, faTruck, faCreditCard, faCheck } from '@fortawesome/fre
 library.add(faShoppingCart, faTruck, faCreditCard, faCheck)
 
 class DefaultLayout extends Component {
+
     componentDidMount() {
         fetch(`${process.env.API_URL}/api/cart`, {
             method: 'get',
@@ -27,10 +28,11 @@ class DefaultLayout extends Component {
                 "Content-Type": "application/json"
             }
         }).then(response => response.json())
-        .then(data => {
-            this.props.dispatch(updateCart(data.cart))
-        });
+            .then(data => {
+                this.props.dispatch(updateCart(data.cart))
+            });
     }
+
     render() {
         const headerElement = this.props.disableHeader ? null : <Header />
         const footerElement = this.props.disableFooter ? null : <Footer />
@@ -46,9 +48,10 @@ class DefaultLayout extends Component {
                     <script src="https://js.stripe.com/v3/"></script>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 </Head>
-                { headerElement }
+
+                {headerElement}
                 {this.props.children}
-                { footerElement }
+                {footerElement}
             </Fragment>
         )
     }
