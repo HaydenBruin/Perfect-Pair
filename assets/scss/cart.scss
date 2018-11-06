@@ -1,19 +1,101 @@
 .checkout {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 100vh;
+	background: #0f8a9d;
+    background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
 
-	.cart {
-		flex: 0 0 450px;
-		background: #FFF;
-		border-right: 1px solid #eee;
-		min-height: 100vh;
+	.steps {
+		flex: 0 0 100%;
+		text-align: center;
+		margin-bottom: 75px;
 
-		.logo {
-			margin: 40px auto;
+		.step {
 			text-align: center;
+			color: #FFF;
+			margin-bottom: 5px;
+			display: inline-block;
+			min-width: 150px;
+			position: relative;
 
-			img {
-				width: 150px;
-				height: 150px;
+			&.completed {
+				.circle {
+					background: #FFF;
+					color: #0C969F;
+				}
+			}
+
+			.circle {
+				margin: 0px auto 10px auto;
+				height: 45px;
+				width: 45px;
+				line-height: 45px;
+				border: 2px solid #FFF;
+				border-radius: 360px;
+				font-size: 16px;
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: calc(50% - 29px);
+				height: 0;
+				border-bottom: 2px solid #fff;
+				position: absolute;
+				left: 0;
+				top: 21px;
+			}
+			
+			&::after {
+				left: auto;
+    			right: 0;
+			}
+
+			&:first-child::before,
+			&:last-child::after {
+				display: none;
+			}
+		}
+	}
+		
+	.payment {
+		flex: 0 0 100%;
+
+		.step {
+			margin: 0px auto;
+			display: block;
+			width: 500px;
+			text-align: center;
+			
+			h2 {
+				font-size: 32px;
+				margin-bottom: 15px;
+				color: #FFF;
+			}
+			p {
+				color: #FFF;
+			}
+			.button {
+				margin-top: 25px;
+				background: #27ae60;
+				color: #FFF;
+			}
+
+			.split {
+				display: flex;
+
+				input {
+					flex: 0 0 50%;
+				}
+			}
+
+			.StripeElement {
+				background: #FFF;
+				padding: 15px;
+				margin-bottom: 30px;
 			}
 		}
 	}
@@ -91,48 +173,6 @@
 			font-size: 20px;
 			font-weight: bold;
 			color: #0DBC79;
-		}
-	}
-}
-
-
-.payment {
-	flex-grow: 1;
-	background: #74b9ff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	.step {
-		margin: 0px auto;
-		display: block;
-		width: 500px;
-		text-align: center;
-		
-		h2 {
-			font-size: 32px;
-			margin-bottom: 15px;
-			color: #FFF;
-		}
-		p {
-			color: #FFF;
-		}
-		.button {
-			margin-top: 25px;
-		}
-
-		.split {
-			display: flex;
-
-			input {
-				flex: 0 0 50%;
-			}
-		}
-
-		.StripeElement {
-			background: #FFF;
-			padding: 15px;
-			margin-bottom: 30px;
 		}
 	}
 }

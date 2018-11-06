@@ -13,7 +13,7 @@ footer {
         margin: 0px auto;
         
         a {
-            flex: 0 0 25%;
+            flex-grow: 1;
             color: #FFF;
             text-decoration: none;
             border-left: 1px solid #fff;
