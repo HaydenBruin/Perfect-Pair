@@ -3,9 +3,10 @@
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 100vh;
+	min-height: 100vh;
 	background: #0f8a9d;
-    background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+	background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+	padding: 30px;
 
 	.steps {
 		flex: 0 0 100%;
@@ -67,7 +68,8 @@
 		.step {
 			margin: 0px auto;
 			display: block;
-			width: 500px;
+			width: 100%;
+			max-width: 500px;
 			text-align: center;
 			
 			h2 {
