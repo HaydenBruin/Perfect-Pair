@@ -1,15 +1,42 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Loading from '../components/loading'
-import Link from 'next/link'
+import { updateCart } from '../store'
 
 class CartList extends Component {
+
+    removeProduct = (productid) => {
+        fetch(`${process.env.API_URL}/api/cart/remove`, {
+            method: 'post',
+            credentials: 'include',
+            body: JSON.stringify({
+                productId: productid
+            }),
+            headers: {
+              "Content-Type": "application/json"
+            }
+        }).then(response => response.json())
+        .then(data => {
+            fetch(`${process.env.API_URL}/api/cart`, {
+                method: 'get',
+                credentials: 'include',
+                headers: {
+                  "Content-Type": "application/json"
+                }
+            }).then(response => response.json())
+            .then(data => {
+                this.props.dispatch(updateCart(data.cart))
+            });
+        });
+    }
 
     render() {
         if(this.props.cartProducts.length === 0)
         {
             return (
-                <Loading />
+                <div className="cart-empty">
+                    <p>Your cart is empty :(</p>
+                </div>
             )
         }
 
@@ -26,6 +53,7 @@ class CartList extends Component {
                                     <div className="details">
                                         <h2>{product.title}</h2>
                                         <p>Quantity: x{product._cart.quantity}</p>
+                                        <p><a onClick={() => this.removeProduct(product.id)}>Remove from cart</a></p>
                                     </div>
                                     <div className="price">
                                         <span className="oldprice">${product.totalprice}</span>
