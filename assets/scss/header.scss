@@ -60,15 +60,21 @@ header {
 }
 
 .mobile-cart {
-    padding: 0px;   
-    background: #0f8a9d;
-    background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: #FFF;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
+    display: none;
+
+    @media all and (max-width: $breakpoint-mobile)
+    {
+        display: block;
+        padding: 0px;   
+        background: #0f8a9d;
+        background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #FFF;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: 10;
+    }
 }

@@ -33,7 +33,7 @@ class CheckoutForm extends Component {
             <div className="payment">
                 <div className="step step3">
                     <h2>Payment Details</h2>
-                    <p>We'll get your delivery address after payment has been completed</p>
+                    <p>We will ship your order shortly after the payment is completed</p>
 
                     <CardElement hidePostalCode={true} />
                     <button onClick={this.submit}>Send</button>
