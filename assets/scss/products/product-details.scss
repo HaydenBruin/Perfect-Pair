@@ -5,8 +5,16 @@
     margin: 0px auto;
     padding: 0px 15px;
 
+    @media all and (max-width: $breakpoint-mobile) {
+        flex-wrap: wrap;
+    }
+
     .img {
         flex: 0 0 50%;
+
+        @media all and (max-width: $breakpoint-mobile) {
+            flex: 0 0 100%;
+        }
 
         img {
             width: 100%;
@@ -16,10 +24,15 @@
         flex: 0 0 50%;
         padding: 30px;
 
+        @media all and (max-width: $breakpoint-mobile) {
+            flex: 0 0 100%;
+            padding: 30px 0px 0px 0px;
+        }
+
         h1 {
-            font-size: 48px;
             color: #333;
             font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .pricing {

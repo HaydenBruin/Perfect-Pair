@@ -22,7 +22,6 @@ class Header extends Component {
     }
 
     render() {
-        console.log(this.props.cartOverview);
         return (
             <Fragment>
                 <CartOverlay />
@@ -38,6 +37,9 @@ class Header extends Component {
                         </div>
                     </div>
                 </header>
+                <div className="mobile-cart" onClick={this.toggleCartOverlay}>
+                    {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD
+                </div>
             </Fragment>
         )
     }

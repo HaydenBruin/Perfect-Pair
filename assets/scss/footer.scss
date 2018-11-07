@@ -2,6 +2,10 @@ footer {
     background: #0f8a9d;
     background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
     margin-top: 40px;
+        
+    @media all and (max-width: $breakpoint-mobile) {
+        margin-bottom: 40px;
+    }
 
     .actions {
         text-align: center;
@@ -34,6 +38,10 @@ footer {
         justify-content: center;
         align-items: center;
         height: 100%;
+                
+        @media all and (max-width: $breakpoint-mobile) {
+            display: none;
+        }
 
         .column {
             flex: 1 0 auto;

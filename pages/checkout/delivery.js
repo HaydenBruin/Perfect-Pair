@@ -12,6 +12,7 @@ export default class Payment extends Component {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({
+                fullname: document.querySelector('input[name=fullname]').value,
                 address: document.querySelector('input[name=address]').value,
                 suburb: document.querySelector('input[name=suburb]').value,
                 city: document.querySelector('input[name=city]').value,
@@ -47,6 +48,7 @@ export default class Payment extends Component {
                                 <form id="checkout_step2" onSubmit={this.handleForm}>
                                     <h2>Delivery Address</h2>
                                     <p>Where do you want your package shipped?</p>
+                                    <input type="text" name="fullname" placeholder="Full Name / Business Name" />
                                     <input type="text" name="address" placeholder="Address" />
                                     <input type="text" name="suburb" placeholder="Suburb" />
                                     <input type="text" name="city" placeholder="City" />

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from '../routes'
 import AddToCart from './add-to-cart'
-import Loading from "../components/loading";
+import LoadingProduct from "../components/loading-product";
 
 export default class Products extends Component {
 
@@ -25,8 +25,17 @@ export default class Products extends Component {
     render() {
         if(this.state.products.length === 0)
         {
+            let elements = [];
+            for(let i = 0; i < 6; i++) { elements.push(<LoadingProduct key={i} />) }
+
             return (
-                <Loading />
+                <div className="products">
+                    <div className="container">
+                        <div className="products-list">
+                            {elements}
+                        </div>
+                    </div>
+                </div>
             )
         }
         return (

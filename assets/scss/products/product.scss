@@ -69,3 +69,69 @@
         }
     }
 }
+
+$loading-color: #eee;
+
+.loading-product {
+    .image {
+        height: 300px;
+        width: 100%;
+        background: $loading-color;
+        animation: FadeElements 1.5s infinite;
+    }
+    .detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+
+        .title {
+            flex: 0 0 70%;
+
+            .tit {
+                background: $loading-color;
+                animation: FadeElements 1.5s infinite;
+                height: 20px;
+                width: 80%;
+            }
+        }
+        .pricing {
+            flex: 0 0 30%;
+
+            .price {
+                background: $loading-color;
+                animation: FadeElements 1.5s infinite;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                height: 20px;
+                width: 100%;
+            }
+        }
+    }
+    .stocking {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .stock {
+            flex: 0 0 47%;
+            margin: 5px 3%;
+            background: $loading-color;
+            animation: FadeElements 1.5s infinite;
+            height: 50px;
+            width: 100%;
+        }
+    }
+}
+
+@keyframes FadeElements {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
