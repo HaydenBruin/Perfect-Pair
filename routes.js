@@ -1,5 +1,6 @@
-const routes = module.exports = require('next-routes')()
-routes
+const routes = require('next-routes')
+
+module.exports = routes()
 .add('/', 'index')
 
 .add('/legal/terms-and-conditions', 'legal/terms-and-conditions')
@@ -17,4 +18,3 @@ routes
 .add('/checkout/completed','/checkout/completed')
 
 .add({name: 'product', pattern: '/product/:slug/:id', page: '/product/index'})
-

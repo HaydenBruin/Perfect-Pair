@@ -5,7 +5,7 @@ const withSass = require('@zeit/next-sass')
 
 module.exports = withSass({
     useFileSystemPublicRoutes: false,
-    //exportPathMap: getRoutes,
+    exportPathMap: getRoutes,
     webpack: (config) => {
         config.plugins.push(
           new webpack.EnvironmentPlugin(localEnv)
