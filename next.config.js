@@ -1,4 +1,4 @@
-const { parsed: localEnv } = require('dotenv').config()
+const { parsed: localEnv } = require('dotenv').config({ systemvars: true })
 const getRoutes = require('./routes')
 const webpack = require('webpack')
 const withSass = require('@zeit/next-sass')
