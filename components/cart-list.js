@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Loading from '../components/loading'
 import { updateCart } from '../store'
 
 class CartList extends Component {
@@ -17,16 +16,8 @@ class CartList extends Component {
             }
         }).then(response => response.json())
         .then(data => {
-            fetch(`${process.env.API_URL}/api/cart`, {
-                method: 'get',
-                credentials: 'include',
-                headers: {
-                  "Content-Type": "application/json"
-                }
-            }).then(response => response.json())
-            .then(data => {
-                this.props.dispatch(updateCart(data.cart))
-            });
+            console.log(data);
+            this.props.dispatch(updateCart(data.cart));
         });
     }
 

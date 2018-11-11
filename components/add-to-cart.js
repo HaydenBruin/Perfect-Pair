@@ -27,17 +27,7 @@ class AddToCart extends Component {
             }
         }).then(response => response.json())
         .then(data => {
-            fetch(`${process.env.API_URL}/api/cart`, {
-                method: 'get',
-                credentials: 'include',
-                headers: {
-                  "Content-Type": "application/json"
-                }
-            }).then(response => response.json())
-            .then(data => {
-                this.props.dispatch(updateCart(data.cart))
-                document.querySelector('.cart-overlay').classList.add('active');
-            });
+            this.props.dispatch(updateCart(data.cart));
         });
     }
 

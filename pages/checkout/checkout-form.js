@@ -14,18 +14,22 @@ class CheckoutForm extends Component {
 
     async submit(ev) {
         let generatedToken = await this.props.stripe.createToken();
-        let response = await fetch(`${process.env.API_URL}/api/checkout/payment`, {
-            method: "post",
+        fetch(`${process.env.API_URL}/api/checkout/payment`, {
+            method: 'post',
             credentials: 'include',
             body: JSON.stringify({
                 tokenId: generatedToken.token.id,
             }),
             headers: { 'Content-Type': 'application/json' }
+        }).then(response => response.json())
+        .then(data => {
+            if(data['status'] === "success") {    
+                Router.pushRoute('/checkout/completed');
+            }
+            else {
+                alert("Sorry, we had issues taking your payment");
+            }
         });
-
-        if (response.ok) {
-            Router.pushRoute('/checkout/completed');
-        }
     }
 
     render() {
