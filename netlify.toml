@@ -1,2 +1,0 @@
-[context.production.environment]
-    API_URL = "https://api.perfectpair.nz"
