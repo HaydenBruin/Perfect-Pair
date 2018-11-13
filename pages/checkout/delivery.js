@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import DefaultLayout from '../../components/layouts/default-layout'
 import { Router } from '../../routes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 export default class Payment extends Component {
 
     handleForm = (e) => {
         e.preventDefault();
 
-        fetch(`${process.env.API_URL}/api/checkout/address`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/checkout/address`, {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({

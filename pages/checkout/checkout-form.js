@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Router } from '../../routes'
 import { injectStripe, CardElement } from 'react-stripe-elements'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 class CheckoutForm extends Component {
 
@@ -14,7 +16,7 @@ class CheckoutForm extends Component {
 
     async submit(ev) {
         let generatedToken = await this.props.stripe.createToken();
-        fetch(`${process.env.API_URL}/api/checkout/payment`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/checkout/payment`, {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({

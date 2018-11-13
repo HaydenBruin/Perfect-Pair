@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from '../routes'
 import AddToCart from './add-to-cart'
 import LoadingProduct from "../components/loading-product";
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 export default class Products extends Component {
 
@@ -12,7 +14,7 @@ export default class Products extends Component {
     componentDidMount = () => {
         if(this.state.products.length === 0)
         {
-            fetch(`${process.env.API_URL}/api/products`, {
+            fetch(`${publicRuntimeConfig.API_URL}/api/products`, {
                 method: 'get',
                 headers: new Headers({
                     'Content-Type': 'application/json'

@@ -8,6 +8,8 @@ import { updateCart } from '../../store'
 import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer';
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 // SCSS
 import '../../assets/scss/app.scss'
@@ -21,7 +23,7 @@ library.add(faShoppingCart, faTruck, faCreditCard, faCheck)
 class DefaultLayout extends Component {
 
     componentDidMount() {
-        fetch(`${process.env.API_URL}/api/cart`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/cart`, {
             method: 'get',
             credentials: 'include',
             headers: {

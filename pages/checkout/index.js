@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import CartList from '../../components/cart-list'
 import DefaultLayout from '../../components/layouts/default-layout'
 import { Router } from '../../routes'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -10,7 +11,7 @@ export default class Cart extends Component {
     handleForm = (e) => {
         e.preventDefault();
 
-        fetch(`${process.env.API_URL}/api/checkout/email`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/checkout/email`, {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({

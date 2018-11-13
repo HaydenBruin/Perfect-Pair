@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateCart } from '../store'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 class CartList extends Component {
 
     removeProduct = (productid) => {
-        fetch(`${process.env.API_URL}/api/cart/remove`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/cart/remove`, {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({

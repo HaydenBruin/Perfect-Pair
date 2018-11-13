@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import DefaultLayout from '../../components/layouts/default-layout'
 import AddToCart from '../../components/add-to-cart'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 export default class Product extends Component {
 
@@ -9,7 +11,7 @@ export default class Product extends Component {
     }
 
     componentDidMount = () => {
-        fetch(`${process.env.API_URL}/api/products/${this.props.id}`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/products/${this.props.id}`, {
             method: 'get',
             credentials: 'include',
             headers: {

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateCart } from '../store'
 import PropTypes from 'prop-types'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 class AddToCart extends Component {
 
@@ -15,7 +17,7 @@ class AddToCart extends Component {
             quantity: this.state.quantity
         }
 
-        fetch(`${process.env.API_URL}/api/cart/add`, {
+        fetch(`${publicRuntimeConfig.API_URL}/api/cart/add`, {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({
