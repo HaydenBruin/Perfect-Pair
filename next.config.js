@@ -12,8 +12,5 @@ module.exports = withSass({
     },
     publicRuntimeConfig: {
         API_URL: 'https://api.perfectpair.nz'
-    },
-    serverRuntimeConfig: {
-        secret: 'https://api.perfectpair.nz'
     }
 });
