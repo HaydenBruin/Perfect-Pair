@@ -47,8 +47,7 @@ p {
 }
 
 button, .button {
-    background: #0f8a9d;
-    background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+    background: $theme-main;
     border: 0px;
     border-radius: 5px;
     padding: 15px 30px;
@@ -59,7 +58,7 @@ button, .button {
     transition: all 2s ease;
 
     &:hover {
-        background: #0f8a9d;
+        opacity: 0.8;
     }
 }
 

@@ -65,10 +65,10 @@
             padding: 0px;
             text-align: center;
             font-size: 14px;
-            background: #0f8a9d;
+            background: $theme-main;
 
             &:hover {
-                background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+                opacity: 0.8;
             }
         }
     }

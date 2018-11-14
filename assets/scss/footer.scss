@@ -1,6 +1,5 @@
 footer {
-    background: #0f8a9d;
-    background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+    background: $theme-main;
     margin-top: 40px;
         
     @media all and (max-width: $breakpoint-mobile) {

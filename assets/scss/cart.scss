@@ -4,8 +4,7 @@
 	align-items: center;
 	flex-wrap: wrap;
 	min-height: 100vh;
-	background: #0f8a9d;
-	background: linear-gradient(57deg, #00C6A7 0%, #1E4D92 100%);
+	background: $theme-main;
 	padding: 30px;
 
 	.steps {

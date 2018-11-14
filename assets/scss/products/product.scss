@@ -70,13 +70,11 @@
     }
 }
 
-$loading-color: #eee;
-
 .loading-product {
     .image {
         height: 300px;
         width: 100%;
-        background: $loading-color;
+        background: $theme-loading-color;
         animation: FadeElements 1.5s infinite;
     }
     .detail {
@@ -89,7 +87,7 @@ $loading-color: #eee;
             flex: 0 0 70%;
 
             .tit {
-                background: $loading-color;
+                background: $theme-loading-color;
                 animation: FadeElements 1.5s infinite;
                 height: 20px;
                 width: 80%;
@@ -99,7 +97,7 @@ $loading-color: #eee;
             flex: 0 0 30%;
 
             .price {
-                background: $loading-color;
+                background: $theme-loading-color;
                 animation: FadeElements 1.5s infinite;
                 margin-top: 5px;
                 margin-bottom: 5px;
@@ -116,7 +114,7 @@ $loading-color: #eee;
         .stock {
             flex: 0 0 47%;
             margin: 5px 3%;
-            background: $loading-color;
+            background: $theme-loading-color;
             animation: FadeElements 1.5s infinite;
             height: 50px;
             width: 100%;
