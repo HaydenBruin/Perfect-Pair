@@ -23,7 +23,7 @@
 			&.completed {
 				.circle {
 					background: #FFF;
-					color: #0C969F;
+					color: #FEA47F;
 				}
 			}
 
@@ -147,6 +147,12 @@
 
 			.oldprice {
 				display: block;
+				font-size: 18px;
+				font-weight: bold;
+				padding: 10px 0px;
+			}
+			/*.oldprice {
+				display: block;
 				font-size: 14px;
 				text-decoration: line-through;
 			}
@@ -155,7 +161,7 @@
 				font-size: 16px;
 				font-weight: bold;
 				color: #0DBC79;
-			}
+			}*/
 		}
 	}
 
@@ -166,6 +172,10 @@
 		padding-top: 15px;
 
 		.fullprice {
+			font-size: 20px;
+			font-weight: bold;
+		}
+		/*.fullprice {
 			text-decoration: line-through;
 			font-size: 14px;
 		}
@@ -174,6 +184,6 @@
 			font-size: 20px;
 			font-weight: bold;
 			color: #0DBC79;
-		}
+		}*/
 	}
 }

@@ -1,7 +1,7 @@
 header {
     padding: 0px;   
     background: $theme-main;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     height: 100px;
     position: sticky;
     top: 0;
@@ -34,7 +34,7 @@ header {
             }
 
             img {
-                height: 42px;
+                height: 50px;
             }
         }
         .column.nav {
@@ -55,6 +55,16 @@ header {
                 }
             }
         }
+    }
+}
+
+.secondary-header {
+    p {
+        padding: 12px 0px;
+        background: #cc9f9f;
+        color: #FFF;
+        text-align: center;
+        font-size: 15px;
     }
 }
 

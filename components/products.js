@@ -40,6 +40,7 @@ export default class Products extends Component {
                 </div>
             )
         }
+        //<div className="saleprice">${product.saleprice}</div>
         return (
             <div className="products">
                 <div className="container">
@@ -56,7 +57,6 @@ export default class Products extends Component {
                                                 <h2>{product.title}</h2>
                                             </div>
                                             <div className="pricing">
-                                                <div className="saleprice">${product.saleprice}</div>
                                                 <div className="price">${product.price}</div>
                                             </div>
                                         </div>

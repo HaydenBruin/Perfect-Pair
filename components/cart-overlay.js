@@ -10,6 +10,21 @@ export class CartOverlay extends Component {
     }
 
     render() {
+        if(this.props.cartProducts.length === 0)
+        {
+            return (
+                <div className="cart-overlay">
+                    <div className="cart-overlay-background" onClick={this.toggleCartOverlay}></div>
+                    <div className="cart-overlay-content">
+                        <div className="cart-empty">
+                            <h1>Your cart is empty :(</h1>
+                            <a className="button" onClick={this.toggleCartOverlay}>Continue Shopping</a>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
         return (
             <div className="cart-overlay">
                 <div className="cart-overlay-background" onClick={this.toggleCartOverlay}></div>

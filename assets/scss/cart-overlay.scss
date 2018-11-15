@@ -33,10 +33,18 @@
         background: #FFF;
         padding: 30px;
 
-        .cart-empty p {
-            font-size: 18px;
+        .cart-empty {
             text-align: center;
-            margin: 40px 0px;
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+            a.button {
+                display: block;
+                width: 320px;
+                margin: 0px auto;
+            }
         }
         h1 {
             font-size: 18px;

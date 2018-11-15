@@ -1,67 +1,78 @@
 footer {
-    background: $theme-main;
     margin-top: 40px;
+    background: #414141;
         
     @media all and (max-width: $breakpoint-mobile) {
         margin-bottom: 40px;
     }
 
-    .actions {
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0px auto;
-        
-        a {
-            flex-grow: 1;
-            color: #FFF;
-            text-decoration: none;
-            border-left: 1px solid #fff;
-            border-left-color: rgba(255,255,255,0.2);
-            padding: 5px 0px;
-            margin: 30px 0px;
-            display: block;
-            text-transform: uppercase;
-
-            &:first-child {
-                border-left: 0px;
-            }
-        }
-    }
-
-    .container {
+    .container-fluid {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-                
-        @media all and (max-width: $breakpoint-mobile) {
-            display: none;
+
+        .actions {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0px auto;
+            padding: 0px 30px;
+            
+            a {
+                flex-grow: 1;
+                color: #FFF;
+                text-decoration: none;
+                border-left: 1px solid #fff;
+                border-left-color: rgba(255,255,255,0.2);
+                padding: 5px 0px;
+                margin: 30px 0px;
+                display: block;
+                text-transform: uppercase;
+    
+                &:first-child {
+                    border-left: 0px;
+                }
+            }
         }
 
-        .column {
-            flex: 1 0 auto;
-            padding: 15px 0px;
+        &.legal-container {
+            background: #333;
+        }
+        .legal {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0px auto;
+            padding: 0px 30px;
 
-            &.copyright {
-                text-align: left;
-            }
+            .column {
+                flex: 1 0 auto;
+                padding: 15px 0px;
 
-            &.links {
-                text-align: right;
-            }
+                &.copyright {
+                    text-align: left;
+                }
 
-            p, a {
-                color: #FFF;
-                font-size: 12px;
-                margin: 0px;
-                padding: 0px;
-            }
-            a {
-                margin-left: 15px;
+                &.links {
+                    text-align: right;
+                }
+
+                p, a {
+                    color: #FFF;
+                    font-size: 12px;
+                    margin: 0px;
+                    padding: 0px;
+                }
+                a {
+                    margin-left: 15px;
+                }
             }
         }
     }

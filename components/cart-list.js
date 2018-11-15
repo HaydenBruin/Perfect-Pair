@@ -18,21 +18,17 @@ class CartList extends Component {
             }
         }).then(response => response.json())
         .then(data => {
-            console.log(data);
             this.props.dispatch(updateCart(data.cart));
         });
     }
 
     render() {
-        if(this.props.cartProducts.length === 0)
-        {
-            return (
-                <div className="cart-empty">
-                    <p>Your cart is empty :(</p>
-                </div>
-            )
-        }
+        //<span className="onsale">${product.totalsaleprice}</span>
 
+        /*<div className="total">
+            <div className="fullprice">${this.props.cartOverview.totalFullPrice}</div>
+            <div className="saleprice">${this.props.cartOverview.totalPrice}</div>
+        </div>*/
         return (
             <div className="cartlist">
                 <div className="cartproducts">
@@ -50,7 +46,6 @@ class CartList extends Component {
                                     </div>
                                     <div className="price">
                                         <span className="oldprice">${product.totalprice}</span>
-                                        <span className="onsale">${product.totalsaleprice}</span>
                                     </div>
                                 </div>
                             )
@@ -60,7 +55,6 @@ class CartList extends Component {
                 
                 <div className="total">
                     <div className="fullprice">${this.props.cartOverview.totalFullPrice}</div>
-                    <div className="saleprice">${this.props.cartOverview.totalPrice}</div>
                 </div>
             </div>
         )
