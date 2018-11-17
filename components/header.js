@@ -5,16 +5,31 @@ import CartOverlay from '../components/cart-overlay'
 
 class Header extends Component {
 
+    constructor() {
+        super();
+
+        this.state = {
+            currentMessage: 0,
+            messages: [
+                "Free shipping on all orders New Zealand wide",
+                "Buy 2 pairs of socks for $16 or 3 pairs for only $21!"
+            ]
+        }
+    }
+    
     componentDidMount = () => {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll = () => {
-
+        setInterval(() => {
+            if(this.state.currentMessage === (this.state.messages.length - 1)) {
+                this.setState({
+                    currentMessage: 0
+                })
+            }
+            else {
+                this.setState({
+                    currentMessage: this.state.currentMessage + 1
+                })
+            }
+        }, 1000);
     }
 
     toggleCartOverlay = () => {
@@ -38,7 +53,7 @@ class Header extends Component {
                     </div>
                 </header>
                 <div className="secondary-header">
-                    <p>Free shipping on all orders New Zealand wide</p>
+                    <p>{this.state.messages[this.state.currentMessage]}</p>
                 </div>
                 <div className="mobile-cart" onClick={this.toggleCartOverlay}>
                     {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD
