@@ -7,7 +7,8 @@ import { updateCart } from '../../store'
 // ELEMENTS
 import Head from 'next/head'
 import Header from '../header'
-import Footer from '../footer';
+import Footer from '../footer'
+import Notification from '../notification'
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
@@ -52,6 +53,7 @@ class DefaultLayout extends Component {
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 </Head>
 
+                <Notification />
                 {headerElement}
                 {this.props.children}
                 {footerElement}

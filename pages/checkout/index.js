@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DefaultLayout from '../../components/layouts/default-layout'
+import Loading from '../../components/loading'
 import { Router } from '../../routes'
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
@@ -8,8 +9,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Cart extends Component {
 
+    constructor() {
+        super();
+
+        this.state = {
+            loading: false
+        }
+    }
     handleForm = (e) => {
         e.preventDefault();
+        this.setState({
+            loading: true
+        })
 
         fetch(`${publicRuntimeConfig.API_URL}/api/checkout/email`, {
             method: 'post',
@@ -25,13 +36,27 @@ export default class Cart extends Component {
             if(data['status'] === "success") {    
                 Router.pushRoute('/checkout/delivery');
             }
-            else {
-                alert('get a unique email pls');
-            }
         });
     }
 
     render() {
+        let renderCheckout = (
+            <form id="checkout_step1" onSubmit={this.handleForm}>
+                <h2>Email Address</h2>
+                <p>Your email address is used to send receipts</p>
+                <input type="text" name="email_address" placeholder="Your Email address" />
+                <button className="button">Continue</button>
+            </form>
+
+        )
+
+        if(this.state.loading)
+        {
+            renderCheckout = (
+                <Loading />
+            )
+        }
+
         return (
             <DefaultLayout disableHeader={true} disableFooter={true}>
                 <div className="checkout">
@@ -44,12 +69,7 @@ export default class Cart extends Component {
                         </div>
                         <div className="payment">
                             <div className="step step1">
-                                <form id="checkout_step1" onSubmit={this.handleForm}>
-                                    <h2>Email Address</h2>
-                                    <p>Your email address is used to send receipts</p>
-                                    <input type="text" name="email_address" placeholder="Your Email address" />
-                                    <button className="button">Continue</button>
-                                </form>
+                                {renderCheckout}
                             </div>
                         </div>
                     </div>
