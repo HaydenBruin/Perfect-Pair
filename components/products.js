@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from '../routes'
 import AddToCart from './add-to-cart'
 import LoadingProduct from "../components/loading-product";
-import { createNotification } from '../store'
 import getConfig from 'next/config'
 import { connect } from 'react-redux'
 const { publicRuntimeConfig } = getConfig()
@@ -25,10 +24,6 @@ class Products extends Component {
         }
     }
 
-    addNote = (message) => {
-        this.props.dispatch(createNotification(message));
-    }
-
     render() {
         if (this.state.products.length === 0) {
             let elements = [];
@@ -48,7 +43,6 @@ class Products extends Component {
         return (
             <div className="products">
                 <div className="container">
-                    <button onClick={() => this.addNote("Hello, this is hayden")}>Add note</button>
                     <div className="products-list">
                         {
                             this.state.products.map((product, index) => {

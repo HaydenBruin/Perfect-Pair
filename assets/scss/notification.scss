@@ -5,20 +5,26 @@
     z-index: 99;
     cursor: pointer;
 
-    &:hover {
-        opacity: 0.9;
-    }
-    
-    p {
-        font-size: 12px;
-        padding: 20px 20px;
-        margin: 0px 0px 15px 0px;
-        background: #2ecc71;
-        color: #FFF;
+    .notification-wrap {
+        text-align: right;
 
-        img {
-            vertical-align: middle;
-            padding-right: 5px;
+        p {
+            font-size: 12px;
+            padding: 20px 20px;
+            margin: 0px 0px 15px 0px;
+            background: #2ecc71;
+            color: #FFF;
+            display: inline-block;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+
+            img {
+                vertical-align: middle;
+                padding-right: 7px;
+            }
         }
     }
 }

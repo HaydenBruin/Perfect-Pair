@@ -31,9 +31,9 @@ class DefaultLayout extends Component {
                 "Content-Type": "application/json"
             }
         }).then(response => response.json())
-            .then(data => {
-                this.props.dispatch(updateCart(data.cart))
-            });
+        .then(data => {
+            this.props.dispatch(updateCart(data.cart))
+        });
     }
 
     render() {
@@ -53,7 +53,7 @@ class DefaultLayout extends Component {
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
                 </Head>
 
-                <Notification />
+                <Notification notifications={this.props.notifications} />
                 {headerElement}
                 {this.props.children}
                 {footerElement}
@@ -64,8 +64,8 @@ class DefaultLayout extends Component {
 
 const mapStateToProps = (state) => ({
     cartOverview: state.cartOverview,
-    cartProducts: state.cartProducts
-
+    cartProducts: state.cartProducts,
+    notifications: state.notificationList
 })
 
 export default connect(mapStateToProps)(DefaultLayout)

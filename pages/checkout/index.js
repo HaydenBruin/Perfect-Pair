@@ -3,11 +3,12 @@ import DefaultLayout from '../../components/layouts/default-layout'
 import Loading from '../../components/loading'
 import { Router } from '../../routes'
 import getConfig from 'next/config'
+import { createNotification } from '../../store'
 const { publicRuntimeConfig } = getConfig()
-
+import { connect } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default class Cart extends Component {
+class Cart extends Component {
 
     constructor() {
         super();
@@ -16,6 +17,7 @@ export default class Cart extends Component {
             loading: false
         }
     }
+    
     handleForm = (e) => {
         e.preventDefault();
         this.setState({
@@ -35,6 +37,7 @@ export default class Cart extends Component {
         .then(data => {
             if(data['status'] === "success") {    
                 Router.pushRoute('/checkout/delivery');
+                this.props.dispatch(createNotification("Thanks, your email address has been saved."));
             }
         });
     }
@@ -78,3 +81,5 @@ export default class Cart extends Component {
         )
     }
 }
+
+export default connect()(Cart)

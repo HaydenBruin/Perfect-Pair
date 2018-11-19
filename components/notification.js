@@ -4,29 +4,31 @@ import { removeNotification } from '../store'
 
 class Notification extends Component {
 
+    dismissNotification = (id) => {
+        this.props.dispatch(removeNotification(id));
+        this.forceUpdate();
+    }
+
     render() {
         if(!this.props.notifications)
         {
             return null;
         }
-
         return (
             <div className="notification">
                 {
                     this.props.notifications.map((notification, index) => {
-                        console.log('hello');
                         return (
-                            <p className="text" key={index} onClick={() => this.props.dispatch(removeNotification(index))}><img src="/static/success.png" /> {index}: {notification}</p>
+                            <div className="notification-wrap" key={index}>
+                                <p className="text" onClick={() => this.dismissNotification(index)}><img src="/static/success.png" />{notification}</p>
+                            </div>
                         )
                     })
                 }
             </div>
         )
     }
+
 }
 
-const mapStateToProps = (state) => ({
-    notifications: state.notificationList
-})
-
-export default connect(mapStateToProps)(Notification)
+export default connect()(Notification)

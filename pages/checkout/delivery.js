@@ -1,14 +1,28 @@
 import React, { Component } from 'react'
 import DefaultLayout from '../../components/layouts/default-layout'
+import Loading from '../../components/loading'
 import { Router } from '../../routes'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import getConfig from 'next/config'
+import { connect } from 'react-redux'
+import { createNotification } from '../../store'
 const { publicRuntimeConfig } = getConfig()
 
-export default class Payment extends Component {
+class Delivery extends Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            loading: false
+        }
+    }
 
     handleForm = (e) => {
         e.preventDefault();
+        this.setState({
+            loading: true
+        })
 
         fetch(`${publicRuntimeConfig.API_URL}/api/checkout/address`, {
             method: 'post',
@@ -27,6 +41,7 @@ export default class Payment extends Component {
         .then(data => {
             if(data['status'] === "success") {    
                 Router.pushRoute('/checkout/payment');
+                this.props.dispatch(createNotification("Thanks, your delivery address has been saved."));
             }
             else {
                 alert("Sorry, we couldn't save your address");
@@ -35,6 +50,26 @@ export default class Payment extends Component {
     }
 
     render() {
+        let renderCheckout = (
+            <form id="checkout_step2" onSubmit={this.handleForm}>
+                <h2>Delivery Address</h2>
+                <p>Where do you want your package shipped?</p>
+                <input type="text" name="fullname" placeholder="Full Name / Business Name" />
+                <input type="text" name="address" placeholder="Address" />
+                <input type="text" name="suburb" placeholder="Suburb" />
+                <input type="text" name="city" placeholder="City" />
+                <input type="text" name="postcode" placeholder="Postcode" />
+                <button className="button">Confirm Shipping Address</button>
+            </form>
+        )
+
+        if(this.state.loading)
+        {
+            renderCheckout = (
+                <Loading />
+            )
+        }
+
         return (
             <DefaultLayout disableHeader={true} disableFooter={true}>
                 <div className="checkout">
@@ -47,16 +82,7 @@ export default class Payment extends Component {
                         </div>
                         <div className="payment">
                             <div className="step step2">
-                                <form id="checkout_step2" onSubmit={this.handleForm}>
-                                    <h2>Delivery Address</h2>
-                                    <p>Where do you want your package shipped?</p>
-                                    <input type="text" name="fullname" placeholder="Full Name / Business Name" />
-                                    <input type="text" name="address" placeholder="Address" />
-                                    <input type="text" name="suburb" placeholder="Suburb" />
-                                    <input type="text" name="city" placeholder="City" />
-                                    <input type="text" name="postcode" placeholder="Postcode" />
-                                    <button className="button">Confirm Shipping Address</button>
-                                </form>
+                                {renderCheckout}
                             </div>
                         </div>
                     </div>
@@ -65,3 +91,4 @@ export default class Payment extends Component {
         )
     }
 }
+export default connect()(Delivery)
