@@ -14,12 +14,12 @@ class CartList extends Component {
                 productId: productid
             }),
             headers: {
-              "Content-Type": "application/json"
+                "Content-Type": "application/json"
             }
         }).then(response => response.json())
-        .then(data => {
-            this.props.dispatch(updateCart(data.cart));
-        });
+            .then(data => {
+                this.props.dispatch(updateCart(data.cart));
+            });
     }
 
     render() {
@@ -52,9 +52,10 @@ class CartList extends Component {
                         })
                     }
                 </div>
-                
+
                 <div className="total">
                     <div className="fullprice">${this.props.cartOverview.totalFullPrice}</div>
+                    <div className="saleprice">${this.props.cartOverview.totalPrice}</div>
                 </div>
             </div>
         )

@@ -34,6 +34,10 @@
         padding: 30px;
         border-radius: 15px;
 
+        .cart-products {
+            overflow-y: auto;
+            height: 300px;
+        }
         .cart-empty {
             text-align: center;
 

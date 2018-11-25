@@ -27,7 +27,7 @@ class Products extends Component {
     render() {
         if (this.state.products.length === 0) {
             let elements = [];
-            for (let i = 0; i < 6; i++) { elements.push(<LoadingProduct key={i} />) }
+            for (let i = 0; i < 8; i++) { elements.push(<LoadingProduct key={i} />) }
 
             return (
                 <div className="products">
