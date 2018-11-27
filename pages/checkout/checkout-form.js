@@ -68,4 +68,4 @@ class CheckoutForm extends Component {
         )
     }
 }
-export default injectStripe(connect()(CheckoutForm))
+export default connect()(CheckoutForm) //injectStripe
