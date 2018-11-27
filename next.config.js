@@ -11,6 +11,6 @@ module.exports = withSass({
         return config
     },
     publicRuntimeConfig: {
-        API_URL: 'https://api.perfectpair.nz'
+        API_URL: 'http://localhost:8000' //https://api.perfectpair.nz
     }
 });
