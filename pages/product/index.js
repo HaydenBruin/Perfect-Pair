@@ -29,17 +29,16 @@ export default class Product extends Component {
         return (
             <DefaultLayout>
                 <div className="product-details">
-                    <div className="img">
-                        <img src={this.state.product.image} className="productimg"/>
-                    </div>
                     <div className="details">
                         <h1>{this.state.product.title}</h1>
                         <p>{this.state.product.description}</p>
                         <div className="pricing">
-                            <div className="saleprice">${this.state.product.saleprice}</div>
                             <div className="price">${this.state.product.price}</div>
                         </div>
                         <AddToCart product={this.state.product} />
+                    </div>
+                    <div className="img">
+                        <img src={this.state.product.image} className="productimg"/>
                     </div>
                 </div>
             </DefaultLayout>

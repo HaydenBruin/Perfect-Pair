@@ -71,7 +71,7 @@ class Delivery extends Component {
         }
 
         return (
-            <DefaultLayout disableHeader={true} disableFooter={true}>
+            <DefaultLayout>
                 <div className="checkout">
                     <div className="check">
                         <div className="steps">

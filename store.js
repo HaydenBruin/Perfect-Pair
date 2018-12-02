@@ -6,6 +6,7 @@ import thunkMiddleware from 'redux-thunk'
 const initialState = {
     cartOverview: [],
     cartProducts: [],
+    cartCoupons: [],
     notificationList: []
 }
 
@@ -15,7 +16,8 @@ export const reducer = (state = initialState, action) => {
         case UPDATE_CART:
             return Object.assign({}, state, {
                 cartOverview: action.payload.overview,
-                cartProducts: action.payload.products
+                cartProducts: action.payload.products,
+                cartCoupons: action.payload.coupons
             })
         case CREATE_NOTIFICATION:
             return Object.assign({}, state, {

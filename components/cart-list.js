@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateCart } from '../store'
+import { updateCart, createNotification } from '../store'
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
@@ -19,22 +19,11 @@ class CartList extends Component {
         }).then(response => response.json())
             .then(data => {
                 this.props.dispatch(updateCart(data.cart));
+                this.props.dispatch(createNotification("The product has been removed from your cart"));
             });
     }
 
     render() {
-        let cartCoupons;
-        if(this.props.cartCoupons.length)
-        {
-            cartCoupons = `
-                <div className="coupons">
-                    this.props.cartCoupons.forEach((coupon) => {
-                        <div className="coupon">Lorem ipsum dolar lorem ipsum dolar</div>
-                        <div className="coupon">Lorem ipsum dolar lorem ipsum dolar</div>
-                    })
-                </div>
-            `
-        }
         return (
             <div className="cartlist">
                 <div className="cartproducts">
@@ -59,7 +48,18 @@ class CartList extends Component {
                     }
                 </div>
 
-                {cartCoupons}
+                { this.props.cartCoupons.length ? (
+                        <div className="coupons">
+                            {
+                                this.props.cartCoupons.map((coupon, index) => {
+                                    return (
+                                        <div className="coupon" key={index}>{coupon.description}</div>
+                                    )
+                                })
+                            }
+                        </div>
+                    ) : null
+                }
 
                 <div className="total">
                     <div className="fullprice">${this.props.cartOverview.totalFullPrice}</div>

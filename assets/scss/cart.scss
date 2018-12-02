@@ -3,27 +3,45 @@
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	min-height: 100vh;
-	background: $theme-main;
-	padding: 30px;
+	padding: 100px;
+
+	@media all and (max-width: $breakpoint-mobile) {
+		padding: 30px;
+	}
 
 	.steps {
 		flex: 0 0 100%;
 		text-align: center;
 		margin-bottom: 75px;
 
+		@media all and (max-width: $breakpoint-mobile) {
+			margin-bottom: 30px;
+		}
+
 		.step {
 			text-align: center;
-			color: #FFF;
+			color: #C7CCCF;
 			margin-bottom: 5px;
 			display: inline-block;
 			min-width: 150px;
 			position: relative;
 
+			@media all and (max-width: $breakpoint-mobile) {
+				min-width: 80px;
+				font-size: 0px;
+			}
+
+			@media all and (max-width: $breakpoint-tiny) {
+				min-width: 65px;
+				font-size: 0px;
+			}
+
 			&.completed {
+				color: #27ae60;
+
 				.circle {
-					background: #FFF;
-					color: #FEA47F;
+					background: #27ae60;
+					color: #FFF;
 				}
 			}
 
@@ -35,6 +53,7 @@
 				border: 2px solid #FFF;
 				border-radius: 360px;
 				font-size: 16px;
+				background: #eee;
 			}
 
 			&::before,
@@ -43,7 +62,7 @@
 				display: block;
 				width: calc(50% - 29px);
 				height: 0;
-				border-bottom: 2px solid #fff;
+				border-bottom: 2px solid #eee;
 				position: absolute;
 				left: 0;
 				top: 21px;
@@ -74,15 +93,18 @@
 			h2 {
 				font-size: 32px;
 				margin-bottom: 15px;
-				color: #FFF;
+				color: #333;
 			}
 			p {
-				color: #FFF;
+				color: #333;
 			}
 			.button {
 				margin-top: 25px;
 				background: #27ae60;
 				color: #FFF;
+			}
+			input {
+				margin-top: 30px;
 			}
 
 			.split {
@@ -94,9 +116,9 @@
 			}
 
 			.StripeElement {
-				background: #FFF;
+				background: #eee;
 				padding: 15px;
-				margin-bottom: 30px;
+				margin-top: 30px;
 			}
 		}
 	}
@@ -166,11 +188,12 @@
 	}
 
 	.coupons {
-		margin: 10px 0px;
+		margin: 15px 0px 0px 0px;
 		text-align: right;
 
 		.coupon {
-			font-size: 14px;
+			font-size: 12px;
+			margin-bottom: 5px;
 		}
 	}
 

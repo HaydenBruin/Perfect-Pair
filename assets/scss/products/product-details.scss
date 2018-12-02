@@ -3,17 +3,18 @@
     width: 1200px;
     max-width: 100%;
     margin: 0px auto;
-    padding: 0px 15px;
+    padding: 30px 15px;
 
     @media all and (max-width: $breakpoint-mobile) {
         flex-wrap: wrap;
     }
 
     .img {
-        flex: 0 0 50%;
+        flex: 0 0 40%;
 
         @media all and (max-width: $breakpoint-mobile) {
             flex: 0 0 100%;
+            margin-top: 30px;
         }
 
         img {
@@ -21,12 +22,12 @@
         }
     }
     .details {
-        flex: 0 0 50%;
+        flex: 1 0 60%;
         padding: 30px;
 
         @media all and (max-width: $breakpoint-mobile) {
             flex: 0 0 100%;
-            padding: 30px 0px 0px 0px;
+            padding: 0px 0px 0px 0px;
         }
 
         h1 {
@@ -34,17 +35,32 @@
             font-weight: bold;
             margin-bottom: 15px;
         }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            width: 480px;
+            max-width: 100%;
+            
+            @media all and (max-width: $breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+
+        .add-to-cart {
+            max-width: 425px;
+
+            .column {
+                @media all and (max-width: $breakpoint-mobile) {
+                    flex: 0 0 50%;
+                }
+            }
+        }
 
         .pricing {
             .price {
-                font-size: 18px;
-                text-decoration: line-through;
+                font-size: 32px;
                 display: inline-block;
-            }
-            .saleprice {
-                font-size: 24px;
-                display: inline-block;
-                margin-right: 15px;
             }
         }
     }

@@ -5,16 +5,12 @@ import CartOverlay from '../components/cart-overlay'
 
 class Header extends Component {
 
-    constructor() {
-        super();
-
-        this.state = {
-            currentMessage: 0,
-            messages: [
-                "Free shipping on all orders New Zealand wide",
-                "Buy 2 pairs of socks for $16 or 3 pairs for only $21!"
-            ]
-        }
+    state = {
+        currentMessage: 0,
+        messages: [
+            "Free shipping on all orders New Zealand wide",
+            "Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
+        ]
     }
     
     componentDidMount = () => {
@@ -29,7 +25,7 @@ class Header extends Component {
                     currentMessage: this.state.currentMessage + 1
                 })
             }
-        }, 1000);
+        }, 3000);
     }
 
     toggleCartOverlay = () => {

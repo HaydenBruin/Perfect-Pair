@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateCart } from '../store'
+import { updateCart, createNotification } from '../store'
 import PropTypes from 'prop-types'
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
@@ -30,6 +30,7 @@ class AddToCart extends Component {
         }).then(response => response.json())
         .then(data => {
             this.props.dispatch(updateCart(data.cart));
+            this.props.dispatch(createNotification("The product has been added to your cart"));
         });
     }
 

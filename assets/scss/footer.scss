@@ -51,17 +51,33 @@ footer {
             max-width: 1200px;
             margin: 0px auto;
             padding: 0px 30px;
+                
+            @media all and (max-width: $breakpoint-mobile) {
+                flex-wrap: wrap;
+            }
 
             .column {
                 flex: 1 0 auto;
                 padding: 15px 0px;
+                
+                @media all and (max-width: $breakpoint-mobile) {
+                    flex: 100%;
+                }
 
                 &.copyright {
                     text-align: left;
+
+                    @media all and (max-width: $breakpoint-mobile) {
+                        display: none;
+                    }
                 }
 
                 &.links {
                     text-align: right;
+
+                    @media all and (max-width: $breakpoint-mobile) {
+                        text-align: center;
+                    }
                 }
 
                 p, a {

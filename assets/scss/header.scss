@@ -59,12 +59,15 @@ header {
 }
 
 .secondary-header {
+    background: #cc9f9f;
+    padding: 12px 10px;
+    text-align: center;
+
     p {
-        padding: 12px 0px;
-        background: #cc9f9f;
         color: #FFF;
-        text-align: center;
         font-size: 15px;
+        margin: 0px;
+        padding: 0px;
     }
 }
 

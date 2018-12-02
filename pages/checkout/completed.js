@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default class Payment extends Component {
     render() {
         return (
-            <DefaultLayout disableHeader={true} disableFooter={true}>
+            <DefaultLayout>
                 <div className="checkout">
                     <div className="check">
                         <div className="steps">
