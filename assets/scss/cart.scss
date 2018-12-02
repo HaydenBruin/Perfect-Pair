@@ -165,6 +165,15 @@
 		}
 	}
 
+	.coupons {
+		margin: 10px 0px;
+		text-align: right;
+
+		.coupon {
+			font-size: 14px;
+		}
+	}
+
 	.total {
 		text-align: center;
 		width: 75px;

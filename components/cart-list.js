@@ -23,12 +23,18 @@ class CartList extends Component {
     }
 
     render() {
-        //<span className="onsale">${product.totalsaleprice}</span>
-
-        /*<div className="total">
-            <div className="fullprice">${this.props.cartOverview.totalFullPrice}</div>
-            <div className="saleprice">${this.props.cartOverview.totalPrice}</div>
-        </div>*/
+        let cartCoupons;
+        if(this.props.cartCoupons.length)
+        {
+            cartCoupons = `
+                <div className="coupons">
+                    this.props.cartCoupons.forEach((coupon) => {
+                        <div className="coupon">Lorem ipsum dolar lorem ipsum dolar</div>
+                        <div className="coupon">Lorem ipsum dolar lorem ipsum dolar</div>
+                    })
+                </div>
+            `
+        }
         return (
             <div className="cartlist">
                 <div className="cartproducts">
@@ -53,6 +59,8 @@ class CartList extends Component {
                     }
                 </div>
 
+                {cartCoupons}
+
                 <div className="total">
                     <div className="fullprice">${this.props.cartOverview.totalFullPrice}</div>
                     <div className="saleprice">${this.props.cartOverview.totalPrice}</div>
@@ -64,6 +72,7 @@ class CartList extends Component {
 
 const mapStateToProps = (state) => ({
     cartOverview: state.cartOverview,
+    cartCoupons: state.cartCoupons,
     cartProducts: state.cartProducts
 })
 
