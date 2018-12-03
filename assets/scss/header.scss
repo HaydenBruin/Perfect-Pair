@@ -7,6 +7,10 @@ header {
     top: 0;
     z-index: 10;
     
+    @media all and (max-width: $breakpoint-mobile) {
+        position: relative;
+    }
+    
     .container {
         display: flex;
         justify-content: center;
