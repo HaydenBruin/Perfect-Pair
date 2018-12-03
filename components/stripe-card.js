@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import { Router } from '../../routes'
-import Loading from '../../components/loading'
+import React, { Fragment, Component } from 'react'
+import Loading from './loading'
 import { injectStripe, CardElement } from 'react-stripe-elements'
-import getConfig from 'next/config'
-import { createNotification } from '../../store'
+import { Router } from './../routes'
+import { createNotification } from './../store'
 import { connect } from 'react-redux'
+import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
-class CheckoutForm extends Component {
-
+class StripeCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +32,7 @@ class CheckoutForm extends Component {
             headers: { 'Content-Type': 'application/json' }
         }).then(response => response.json())
         .then(data => {
-            if(data['status'] === "success") {    
+            if (data['status'] === "success") {
                 Router.pushRoute('/checkout/completed');
                 this.props.dispatch(createNotification("Thanks, your payment was successful"));
             }
@@ -44,28 +43,22 @@ class CheckoutForm extends Component {
     }
 
     render() {
+        
         let renderCheckout = (
             <button className="button" onClick={this.submit}>Purchase Goodies</button>
         )
 
-        if(this.state.loading)
-        {
+        if (this.state.loading) {
             renderCheckout = (
                 <Loading />
             )
         }
         return (
-            <div className="payment">
-                <div className="step step3">
-                    <h2>Payment Details</h2>
-                    <p>We will ship your order shortly after the payment is completed</p>
-
-                    <CardElement hidePostalCode={true} />
-                    {renderCheckout}
-            
-                </div>
-            </div>
+            <Fragment>
+                <CardElement hidePostalCode={true} />
+                {renderCheckout}
+            </Fragment>
         )
     }
 }
-export default connect()(CheckoutForm) //injectStripe
+export default injectStripe(connect()(StripeCard))

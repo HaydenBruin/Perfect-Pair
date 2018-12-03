@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import DefaultLayout from '../../components/layouts/default-layout'
-import CheckoutForm from './checkout-form'
+import DefaultLayout from './../../components/layouts/default-layout'
+import CheckoutForm from './../../components/checkout-form'
 import { StripeProvider, Elements } from 'react-stripe-elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
