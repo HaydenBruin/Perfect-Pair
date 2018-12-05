@@ -3,6 +3,8 @@ import DefaultLayout from './../../components/layouts/default-layout'
 import CheckoutForm from './../../components/checkout-form'
 import { StripeProvider, Elements } from 'react-stripe-elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import getConfig from 'next/config'
+const { publicRuntimeConfig } = getConfig()
 
 class Payment extends Component {
 
@@ -14,7 +16,7 @@ class Payment extends Component {
     }
 
     componentDidMount() {
-        this.setState({ stripe: window.Stripe('pk_test_xxaqpzviIbXJ63m1TPUhoyz8') });
+        this.setState({ stripe: window.Stripe(publicRuntimeConfig.STRIPE_PUBLIC) });
     }
 
     render() {
