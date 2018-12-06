@@ -5,6 +5,11 @@
     z-index: 99;
     cursor: pointer;
 
+    @media all and (max-width: $breakpoint-mobile) {
+        bottom: 0;
+        top: 15px;
+    }
+
     .notification-wrap {
         text-align: right;
 
@@ -16,7 +21,11 @@
             color: #FFF;
             display: inline-block;
             transition: all 0.3s ease;
-            
+                    
+            @media all and (max-width: $breakpoint-mobile) {
+                font-size: 10px;
+            }
+
             &:hover {
                 opacity: 0.8;
             }

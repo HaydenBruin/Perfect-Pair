@@ -8,11 +8,12 @@ class Notification extends Component {
         this.props.dispatch(removeNotification(id));
         this.forceUpdate();
     }
+
     componentDidUpdate = () => {
         this.props.notifications.forEach((notification, index) => {
             setTimeout(() => {
                 this.dismissNotification(index)
-            },3000)
+            },1000)
         });
     }
 

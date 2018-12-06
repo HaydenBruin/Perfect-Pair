@@ -18,6 +18,13 @@ class Delivery extends Component {
         }
     }
 
+    componentDidUpdate = () => {
+        if(!this.props.cartOverview.length && this.props.cartOverview.totalProducts == 0)
+        {
+            Router.pushRoute('/');
+        }
+    }
+
     handleForm = (e) => {
         e.preventDefault();
         this.setState({
@@ -91,4 +98,10 @@ class Delivery extends Component {
         )
     }
 }
-export default connect()(Delivery)
+const mapStateToProps = (state) => ({
+    cartOverview: state.cartOverview,
+    cartCoupons: state.cartCoupons,
+    cartProducts: state.cartProducts
+})
+
+export default connect(mapStateToProps)(Delivery);

@@ -23,7 +23,7 @@ library.add(faShoppingCart, faTruck, faCreditCard, faCheck)
 
 class DefaultLayout extends Component {
 
-    componentDidMount() {
+    componentDidMount = () => {
         fetch(`${publicRuntimeConfig.API_URL}/api/cart`, {
             method: 'get',
             credentials: 'include',

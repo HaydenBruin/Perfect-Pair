@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 
 export default class Payment extends Component {
+    
     render() {
         return (
             <DefaultLayout>

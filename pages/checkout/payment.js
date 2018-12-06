@@ -3,6 +3,8 @@ import DefaultLayout from './../../components/layouts/default-layout'
 import CheckoutForm from './../../components/checkout-form'
 import { StripeProvider, Elements } from 'react-stripe-elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { connect } from 'react-redux'
+import { Router } from '../../routes'
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
@@ -15,8 +17,11 @@ class Payment extends Component {
         };
     }
 
-    componentDidMount() {
-        this.setState({ stripe: window.Stripe(publicRuntimeConfig.STRIPE_PUBLIC) });
+    componentDidUpdate = () => {
+        if(!this.props.cartOverview.length && this.props.cartOverview.totalProducts == 0)
+        {
+            Router.pushRoute('/');
+        }
     }
 
     render() {
@@ -45,4 +50,10 @@ class Payment extends Component {
     }
 }
 
-export default Payment
+const mapStateToProps = (state) => ({
+    cartOverview: state.cartOverview,
+    cartCoupons: state.cartCoupons,
+    cartProducts: state.cartProducts
+})
+
+export default connect(mapStateToProps)(Payment);

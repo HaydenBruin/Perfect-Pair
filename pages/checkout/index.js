@@ -10,11 +10,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Cart extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             loading: false
+        }
+    }
+
+    componentDidUpdate = () => {
+        if(!this.props.cartOverview.length && this.props.cartOverview.totalProducts == 0)
+        {
+            Router.pushRoute('/');
         }
     }
     
@@ -82,4 +89,10 @@ class Cart extends Component {
     }
 }
 
-export default connect()(Cart)
+const mapStateToProps = (state) => ({
+    cartOverview: state.cartOverview,
+    cartCoupons: state.cartCoupons,
+    cartProducts: state.cartProducts
+})
+
+export default connect(mapStateToProps)(Cart);
