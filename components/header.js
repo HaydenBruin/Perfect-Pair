@@ -5,6 +5,8 @@ import CartOverlay from '../components/cart-overlay'
 
 class Header extends Component {
 
+    sliderTimer = null;
+
     state = {
         currentMessage: 0,
         messages: [
@@ -14,7 +16,7 @@ class Header extends Component {
     }
     
     componentDidMount = () => {
-        setInterval(() => {
+        this.sliderTimer = setInterval(() => {
             if(this.state.currentMessage === (this.state.messages.length - 1)) {
                 this.setState({
                     currentMessage: 0
@@ -26,6 +28,10 @@ class Header extends Component {
                 })
             }
         }, 3000);
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.sliderTimer);
     }
 
     toggleCartOverlay = () => {

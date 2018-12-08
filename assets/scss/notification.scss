@@ -6,7 +6,7 @@
     cursor: pointer;
 
     @media all and (max-width: $breakpoint-mobile) {
-        bottom: 0;
+        bottom: unset;
         top: 15px;
     }
 

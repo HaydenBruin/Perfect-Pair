@@ -8,6 +8,7 @@ import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
 class StripeCard extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {

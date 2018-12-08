@@ -23,11 +23,9 @@ export const reducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 notificationList: [...state.notificationList, action.payload]
             })
-            case REMOVE_NOTIFICATION:
-                let notifications = state.notificationList;
-                notifications.splice(action.payload, 1);
+            case REMOVE_NOTIFICATIONS:
                 return Object.assign({}, state, {
-                    notificationList: notifications
+                    notificationList: []
                 })
         default:
             return state
@@ -38,7 +36,7 @@ export const reducer = (state = initialState, action) => {
 // ACTIONS
 const UPDATE_CART = 'UPDATE_CART'
 const CREATE_NOTIFICATION = 'CREATE_NOTIFICATION'
-const REMOVE_NOTIFICATION = 'REMOVE_NOTIFICATION'
+const REMOVE_NOTIFICATIONS = 'REMOVE_NOTIFICATIONS'
 
 export const updateCart = (cart) => ({
     type: UPDATE_CART,
@@ -48,8 +46,8 @@ export const createNotification = (message) => ({
     type: CREATE_NOTIFICATION,
     payload: message
 })
-export const removeNotification = (id) => ({
-    type: REMOVE_NOTIFICATION,
+export const removeNotifications = (id) => ({
+    type: REMOVE_NOTIFICATIONS,
     payload: id
 })
 

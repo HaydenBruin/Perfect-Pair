@@ -17,6 +17,10 @@ class Payment extends Component {
         };
     }
 
+    componentDidMount = () => {
+        this.setState({ stripe: window.Stripe(publicRuntimeConfig.STRIPE_PUBLIC) });
+    }
+
     componentDidUpdate = () => {
         if(!this.props.cartOverview.length && this.props.cartOverview.totalProducts == 0)
         {

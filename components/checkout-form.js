@@ -16,4 +16,4 @@ class CheckoutForm extends Component {
         )
     }
 }
-export default CheckoutForm //injectStripe
+export default CheckoutForm

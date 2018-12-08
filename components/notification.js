@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { removeNotification } from '../store'
+import { removeNotifications } from '../store'
 
 class Notification extends Component {
 
-    dismissNotification = (id) => {
-        this.props.dispatch(removeNotification(id));
-        this.forceUpdate();
+    notificationTimer = null;
+    
+    dismissNotifications = (id) => {
+        this.props.dispatch(removeNotifications());
     }
 
     componentDidUpdate = () => {
-        this.props.notifications.forEach((notification, index) => {
-            setTimeout(() => {
-                this.dismissNotification(index)
-            },1000)
-        });
+        clearTimeout(this.notificationTimer);
+        this.notificationTimer = setTimeout(() => {
+            this.props.dispatch(removeNotifications());
+        },3000)
     }
 
     render() {
@@ -28,7 +28,7 @@ class Notification extends Component {
                     this.props.notifications.map((notification, index) => {
                         return (
                             <div className="notification-wrap" key={index}>
-                                <p className="text" onClick={() => this.dismissNotification(index)}><img src="/static/success.png" />{notification}</p>
+                                <p className="text" onClick={() => this.dismissNotifications()}><img src="/static/success.png" />{notification}</p>
                             </div>
                         )
                     })
