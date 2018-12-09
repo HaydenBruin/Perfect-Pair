@@ -1,13 +1,11 @@
 const { parsed: localEnv } = require('dotenv').config()
 const webpack = require('webpack')
 const withSass = require('@zeit/next-sass')
-const getRoutes = require('./routes')
 
 const prod = process.env.NODE_ENV === 'production';
 
 module.exports = withSass({
     useFileSystemPublicRoutes: false,
-	exportPathMap: getRoutes,
     webpack: (config) => {
         config.plugins.push(
           new webpack.EnvironmentPlugin(localEnv)
