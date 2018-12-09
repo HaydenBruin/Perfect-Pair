@@ -48,7 +48,7 @@ class Products extends Component {
                             this.state.products.map((product, index) => {
                                 return (
                                     <div className="product" key={index}>
-                                        <Link route={`/product/${product.slug}/${product.id}`}>
+                                        <Link href="product" params={{ slug: product.slug, id: product.id }}>
                                             <a><img src={product.image} className="productimg" /></a>
                                         </Link>
                                         <div className="details">
