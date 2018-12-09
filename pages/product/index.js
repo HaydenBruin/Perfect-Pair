@@ -6,7 +6,6 @@ import getProduct from '../../components/apis/product'
 export default class Product extends Component {
 
     render() {
-        console.log(this.props);
         return (
             <DefaultLayout>
                 <div className="product-details">
@@ -28,10 +27,12 @@ export default class Product extends Component {
 }
 
 Product.getInitialProps = async ({ query }) => {
-    console.log('hey');
-    const productFetch = await getProduct(query);
-    const productJson = await productFetch.json()
-    console.log('wefwe');
-    return productJson;
+    if(query.id)
+    {
+        const productFetch = await getProduct(query);
+        const productJson = await productFetch.json()
+        return productJson;
+    }
+    return {};
 }
   
