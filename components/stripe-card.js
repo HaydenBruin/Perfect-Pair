@@ -41,9 +41,11 @@ class StripeCard extends Component {
                 this.props.dispatch(createNotification("Thanks, your payment was successful"));
             }
             else {
+                
+                const errorMSG = data.message ? data.message : "Sorry, we had issues taking your payment - please try again!";
                 this.setState({
                     loading: false,
-                    errorMSG: 'Sorry, we had issues taking your payment'
+                    errorMSG: errorMSG
                 })
             }
         });

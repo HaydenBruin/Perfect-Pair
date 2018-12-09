@@ -66,6 +66,7 @@
             text-align: center;
             font-size: 14px;
             background: $theme-main;
+            @include no-select();
 
             @media all and (max-width: $breakpoint-mobile) {
                 border-radius: 0px;

@@ -13,7 +13,7 @@ module.exports = withSass({
         return config
     },
     publicRuntimeConfig: {
-        API_URL: 'https://api.perfectpair.nz',
+        API_URL: 'http://localhost:8000', //'https://api.perfectpair.nz',
         STRIPE_PUBLIC: prod ? 'pk_live_h3O9uDR1sgFrz1sLfbU6QynV' : 'pk_test_xxaqpzviIbXJ63m1TPUhoyz8'
     }
 });
