@@ -14,7 +14,9 @@ class Cart extends Component {
         super(props);
 
         this.state = {
-            loading: false
+            loading: false,
+            errorMSG: null,
+            email_address: ""
         }
     }
 
@@ -46,7 +48,19 @@ class Cart extends Component {
                 Router.pushRoute('/checkout/delivery');
                 this.props.dispatch(createNotification("Thanks, your email address has been saved."));
             }
+            else {
+                this.setState({
+                    loading: false,
+                    errorMSG: "Please provide a valid email address"
+                })
+            }
         });
+    }
+
+    updateEmailAddress = (event) => {
+        this.setState({
+            email_address: event.target.value
+        })
     }
 
     render() {
@@ -54,7 +68,12 @@ class Cart extends Component {
             <form id="checkout_step1" onSubmit={this.handleForm}>
                 <h2>Email Address</h2>
                 <p>Your email address is used to send receipts</p>
-                <input type="text" name="email_address" placeholder="Your Email address" />
+                
+                {this.state.errorMSG && (
+                    <div className="validate error">{this.state.errorMSG}</div>
+                )}
+                
+                <input type="text" name="email_address" placeholder="Your Email address" value={this.state.email_address} onChange={this.updateEmailAddress}/>
                 <button className="button">Continue</button>
             </form>
 

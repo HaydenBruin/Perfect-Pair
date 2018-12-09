@@ -13,14 +13,16 @@ class StripeCard extends Component {
         super(props);
         this.state = {
             complete: false,
-            loading: false
+            loading: false,
+            errorMSG: ''
         };
         this.submit = this.submit.bind(this);
     }
 
     async submit(ev) {
         this.setState({
-            loading: true
+            loading: true,
+            errorMSG: ''
         })
 
         let generatedToken = await this.props.stripe.createToken();
@@ -33,12 +35,16 @@ class StripeCard extends Component {
             headers: { 'Content-Type': 'application/json' }
         }).then(response => response.json())
         .then(data => {
+            console.log(data);
             if (data['status'] === "success") {
                 Router.pushRoute('/checkout/completed');
                 this.props.dispatch(createNotification("Thanks, your payment was successful"));
             }
             else {
-                alert("Sorry, we had issues taking your payment");
+                this.setState({
+                    loading: false,
+                    errorMSG: 'Sorry, we had issues taking your payment'
+                })
             }
         });
     }
@@ -55,10 +61,19 @@ class StripeCard extends Component {
             )
         }
         return (
-            <Fragment>
-                <CardElement hidePostalCode={true} />
-                {renderCheckout}
-            </Fragment>
+            <div className="payment">
+                <div className="step step3">
+                    <h2>Payment Details</h2>
+                    <p>We will ship your order shortly after the payment is completed</p>
+
+                    {this.state.errorMSG && (
+                        <div className="validate error">{this.state.errorMSG}</div>
+                    )}
+
+                    <CardElement hidePostalCode={true} />
+                    {renderCheckout}
+                </div>
+            </div>
         )
     }
 }

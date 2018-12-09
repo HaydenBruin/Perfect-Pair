@@ -14,8 +14,15 @@ class Delivery extends Component {
         super();
 
         this.state = {
-            loading: false
+            loading: false,
+            errorMSG: null,
+            fullname: '',
+            address: '',
+            suburb: '',
+            city: '',
+            postcode: ''
         }
+        
     }
 
     componentDidUpdate = () => {
@@ -35,11 +42,11 @@ class Delivery extends Component {
             method: 'post',
             credentials: 'include',
             body: JSON.stringify({
-                fullname: document.querySelector('input[name=fullname]').value,
-                address: document.querySelector('input[name=address]').value,
-                suburb: document.querySelector('input[name=suburb]').value,
-                city: document.querySelector('input[name=city]').value,
-                postcode: document.querySelector('input[name=postcode]').value
+                fullname: this.state.fullname,
+                address: this.state.address,
+                suburb: this.state.suburb,
+                city: this.state.city,
+                postcode: this.state.postcode
             }),
             headers: {
                 "Content-Type": "application/json"
@@ -51,9 +58,38 @@ class Delivery extends Component {
                 this.props.dispatch(createNotification("Thanks, your delivery address has been saved."));
             }
             else {
-                alert("Sorry, we couldn't save your address");
+                this.setState({
+                    loading: false,
+                    errorMSG: "Please make sure all fields are populated"
+                })
             }
         });
+    }
+
+    updateFullName = (event) => {
+        this.setState({
+            fullname: event.target.value
+        })
+    }
+    updateAddress = (event) => {
+        this.setState({
+            address: event.target.value
+        })
+    }
+    updateCity = (event) => {
+        this.setState({
+            city: event.target.value
+        })
+    }
+    updatePostcode = (event) => {
+        this.setState({
+            postcode: event.target.value
+        })
+    }
+    updateSuburb = (event) => {
+        this.setState({
+            suburb: event.target.value
+        })
     }
 
     render() {
@@ -61,11 +97,16 @@ class Delivery extends Component {
             <form id="checkout_step2" onSubmit={this.handleForm}>
                 <h2>Delivery Address</h2>
                 <p>Where do you want your package shipped?</p>
-                <input type="text" name="fullname" placeholder="Full Name / Business Name" />
-                <input type="text" name="address" placeholder="Address" />
-                <input type="text" name="suburb" placeholder="Suburb" />
-                <input type="text" name="city" placeholder="City" />
-                <input type="text" name="postcode" placeholder="Postcode" />
+                
+                {this.state.errorMSG && (
+                    <div className="validate error">{this.state.errorMSG}</div>
+                )}
+
+                <input type="text" name="fullname" placeholder="Full Name / Business Name" value={this.state.fullname} onChange={this.updateFullName} />
+                <input type="text" name="address" placeholder="Address" value={this.state.address} onChange={this.updateAddress} />
+                <input type="text" name="suburb" placeholder="Suburb" value={this.state.suburb} onChange={this.updateSuburb} />
+                <input type="text" name="city" placeholder="City" value={this.state.city} onChange={this.updateCity} />
+                <input type="text" name="postcode" placeholder="Postcode" value={this.state.postcode} onChange={this.updatePostcode} />
                 <button className="button">Confirm Shipping Address</button>
             </form>
         )

@@ -102,3 +102,17 @@ img {
     margin: 0px auto;
     text-align: center;
 }
+
+/*** VALIDATION MESSAGES ***/
+.validate {
+    padding: 10px 15px;
+    background: #eee;
+    color: #333;
+    font-size: 14px;
+    text-align: left;
+
+    &.error {
+        background: #DD353F;
+        color: #FFF;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DefaultLayout from './../../components/layouts/default-layout'
-import CheckoutForm from './../../components/checkout-form'
+import StripeCard from './../../components/stripe-card'
 import { StripeProvider, Elements } from 'react-stripe-elements'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { connect } from 'react-redux'
@@ -43,7 +43,7 @@ class Payment extends Component {
                             <div className="step step3"></div>
                             <StripeProvider stripe={this.state.stripe}>
                                 <Elements>
-                                    <CheckoutForm />
+                                    <StripeCard />
                                 </Elements>
                             </StripeProvider>
                         </div>
