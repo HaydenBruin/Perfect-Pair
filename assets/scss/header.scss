@@ -81,6 +81,12 @@ header {
     .container {
         display: flex;
 
+        @media all and (max-width: $breakpoint-mobile) {
+            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            padding: 0px;
+        }
+
         .message, .countdown {
             color: #FFF;
             font-size: 15px;
@@ -89,12 +95,23 @@ header {
         }
 
         .message {
-            flex: 1 0 70%;
+            flex: 1 1 70%;
             text-align: left;
+
+            @media all and (max-width: $breakpoint-mobile) {
+                flex: 1 1 100%;
+                text-align: center;
+                margin-bottom: 5px;
+            }
         }
         .countdown {
-            flex: 1 0 30%;
+            flex: 1 1 30%;
             text-align: right;
+
+            @media all and (max-width: $breakpoint-mobile) {
+                flex: 1 1 100%;
+                text-align: center;
+            }
         }
     }
 }
@@ -105,15 +122,19 @@ header {
     @media all and (max-width: $breakpoint-mobile)
     {
         display: block;
-        padding: 0px;   
+        padding: 15px;   
         background: $theme-main;
-        height: 40px;
-        line-height: 40px;
         text-align: center;
         color: #FFF;
         width: 100%;
         position: fixed;
         bottom: 0;
         z-index: 10;
+
+        .shipping {
+            font-size: 12px;
+            padding-top: 2px;
+            display: block;
+        }
     }
 }

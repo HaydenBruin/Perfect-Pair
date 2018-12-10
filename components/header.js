@@ -66,7 +66,8 @@ class Header extends Component {
                     </div>
                 </div>
                 <div className="mobile-cart" onClick={this.toggleCartOverlay}>
-                    {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD
+                    {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD<br/>
+                    <span className="shipping">Free shipping on all orders NZ wide</span>
                 </div>
             </Fragment>
         )
