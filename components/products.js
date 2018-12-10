@@ -8,24 +8,8 @@ const { publicRuntimeConfig } = getConfig()
 
 class Products extends Component {
 
-    state = {
-        products: []
-    }
-
-    componentDidMount = () => {
-        if (this.state.products.length === 0) {
-            fetch(`${publicRuntimeConfig.API_URL}/api/products`, {
-                method: 'get',
-                headers: new Headers({
-                    'Content-Type': 'application/json'
-                })
-            }).then(response => response.json())
-                .then(json => this.setState({ products: json.data }));
-        }
-    }
-
     render() {
-        if (this.state.products.length === 0) {
+        if (this.props.products.data.length === 0) {
             let elements = [];
             for (let i = 0; i < 8; i++) { elements.push(<LoadingProduct key={i} />) }
 
@@ -45,7 +29,7 @@ class Products extends Component {
                 <div className="container">
                     <div className="products-list">
                         {
-                            this.state.products.map((product, index) => {
+                            this.props.products.data.map((product, index) => {
                                 return (
                                     <div className="product" key={index}>
                                         <Link route="product" params={{ slug: product.slug, id: product.id }}>

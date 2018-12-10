@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 import getConfig from 'next/config'
 const { publicRuntimeConfig } = getConfig()
 
-export default function getAllProducts() {
+export function getAllProducts() {
     return fetch(`${publicRuntimeConfig.API_URL}/api/products`, {
         method: 'get',
         credentials: 'include',
