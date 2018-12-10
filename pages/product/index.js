@@ -3,7 +3,7 @@ import DefaultLayout from '../../components/layouts/default-layout'
 import AddToCart from '../../components/add-to-cart'
 import { getProduct } from '../../components/apis/product'
 
-export default class Product extends Component {
+class Product extends Component {
 
     render() {
         if(!this.props.product) return null;
@@ -27,16 +27,13 @@ export default class Product extends Component {
         )
     }
 }
+export default Product
 
 Product.getInitialProps = async ({ query }) => {
-    if(query.id)
-    {
-        const productFetch = await getProduct(query);
-        const productJson = await productFetch.json()
-        return {
-            product: productJson
-        }
+    const productFetch = await getProduct(query);
+    const productJson = await productFetch.json()
+    return {
+        product: productJson
     }
-    return {}
 }
   

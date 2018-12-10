@@ -1,5 +1,5 @@
 const routes = require('next-routes')
-
+// If you change something in here change it within next.config.js as well
 module.exports = routes()
 .add('/', 'index')
 
@@ -7,10 +7,10 @@ module.exports = routes()
 .add('/legal/privacy-policy', 'legal/privacy-policy')
 .add('/legal/cookie-policy', 'legal/cookie-policy')
 
-.add('/delivery', 'general/delivery')
-.add('/returns', 'general/returns')
-.add('/contact', 'general/contact')
-.add('/about', 'general/about')
+.add('/delivery', 'delivery')
+.add('/returns', 'returns')
+.add('/contact', 'contact')
+.add('/about', 'about')
 
 .add('/checkout', '/checkout/index')
 .add('/checkout/payment','/checkout/payment')
