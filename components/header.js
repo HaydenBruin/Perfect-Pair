@@ -2,13 +2,14 @@ import React, { Fragment, Component } from 'react'
 import { connect } from 'react-redux'
 import Link from 'next/link'
 import CartOverlay from '../components/cart-overlay'
+import Countdown from 'react-countdown-now';
 
 class Header extends Component {
 
     sliderTimer = null;
 
     state = {
-        countdown: new Date("Jan 5, 2019 15:37:25").getTime(),
+        discountFinish: 1545044655363,
         currentMessage: 0,
         messages: [
             "Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
@@ -16,6 +17,7 @@ class Header extends Component {
     }
     
     componentDidMount = () => {
+        //console.log(Date.now() + (1000 * 60 * 60 * 24 * 7));
         /*this.sliderTimer = setInterval(() => {
             if(this.state.currentMessage === (this.state.messages.length - 1)) {
                 this.setState({
@@ -50,7 +52,7 @@ class Header extends Component {
                         <div className="nav column">
                             <div className="details">
                                 <div className="overview" onClick={this.toggleCartOverlay}>
-                                    {this.props.cartProducts.length} goodie(s) - ${this.props.cartOverview.totalPrice} NZD
+                                    {this.props.cartProducts.length} Pair(s) - ${this.props.cartOverview.totalPrice} NZD
                                 </div>
                                 <div className="submessage">Free shipping on all orders NZ wide</div>
                             </div>
@@ -60,7 +62,7 @@ class Header extends Component {
                 <div className="secondary-header">
                     <div className="container">
                         <div className="message">{this.state.messages[0]}</div>
-                        <div className="countdown">03:31:51 Remaining</div>
+                        <div className="countdown"><Countdown date={this.state.discountFinish} /> Remaining</div>
                     </div>
                 </div>
                 <div className="mobile-cart" onClick={this.toggleCartOverlay}>
