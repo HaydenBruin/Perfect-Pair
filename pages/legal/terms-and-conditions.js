@@ -5,7 +5,7 @@ export default class TermsAndConditions extends Component {
     render() {
         return (
             <DefaultLayout>
-                <div className="container">
+                <div className="container content">
                     <h1>Terms & Conditions</h1>
 
 

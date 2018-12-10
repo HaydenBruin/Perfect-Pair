@@ -5,7 +5,7 @@ export default class PrivacyPolicy extends Component {
     render() {
         return (
             <DefaultLayout>
-                <div className="container">
+                <div className="container content">
                     <h1>Privacy Policy</h1>
 
 

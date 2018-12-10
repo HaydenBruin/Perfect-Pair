@@ -5,7 +5,7 @@ export default class CookiePolicy extends Component {
     render() {
         return (
             <DefaultLayout>
-                <div className="container">
+                <div className="container content">
 
                     <h1>Cookie Policy</h1>
                     <h2>What is a cookie?</h2>

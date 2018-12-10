@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import DefaultLayout from '../../components/layouts/default-layout'
+import DefaultLayout from '../components/layouts/default-layout'
 
 export default class Contact extends Component {
     render() {
         return (
             <DefaultLayout>
-                <div className="container">
+                <div className="container content">
                     <h1>Contact Us</h1>
                     
                     <p>If you have any questions about our products or services feel free to contact us using the email address below.</p>
