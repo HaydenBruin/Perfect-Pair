@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "next build"
+    "start": "NODE_ENV=production node server.js",
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.8",
