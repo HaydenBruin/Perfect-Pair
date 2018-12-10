@@ -8,15 +8,15 @@ class Header extends Component {
     sliderTimer = null;
 
     state = {
+        countdown: new Date("Jan 5, 2019 15:37:25").getTime(),
         currentMessage: 0,
         messages: [
-            "Free shipping on all orders New Zealand wide",
             "Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
         ]
     }
     
     componentDidMount = () => {
-        this.sliderTimer = setInterval(() => {
+        /*this.sliderTimer = setInterval(() => {
             if(this.state.currentMessage === (this.state.messages.length - 1)) {
                 this.setState({
                     currentMessage: 0
@@ -27,11 +27,11 @@ class Header extends Component {
                     currentMessage: this.state.currentMessage + 1
                 })
             }
-        }, 3000);
+        }, 3000);*/
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.sliderTimer);
+        //clearInterval(this.sliderTimer);
     }
 
     toggleCartOverlay = () => {
@@ -48,14 +48,20 @@ class Header extends Component {
                             <Link href="/"><a><img src="/static/logo.png" alt="Perfect Pair Logo" /></a></Link>
                         </div>
                         <div className="nav column">
-                            <div className="overview" onClick={this.toggleCartOverlay}>
-                                {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD
+                            <div className="details">
+                                <div className="overview" onClick={this.toggleCartOverlay}>
+                                    {this.props.cartProducts.length} goodie(s) - ${this.props.cartOverview.totalPrice} NZD
+                                </div>
+                                <div className="submessage">Free shipping on all orders NZ wide</div>
                             </div>
                         </div>
                     </div>
                 </header>
                 <div className="secondary-header">
-                    <p>{this.state.messages[this.state.currentMessage]}</p>
+                    <div className="container">
+                        <div className="message">{this.state.messages[0]}</div>
+                        <div className="countdown">03:31:51 Remaining</div>
+                    </div>
                 </div>
                 <div className="mobile-cart" onClick={this.toggleCartOverlay}>
                     {this.props.cartProducts.length} bag item(s) - ${this.props.cartOverview.totalPrice} NZD

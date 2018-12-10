@@ -44,18 +44,29 @@ header {
         .column.nav {
             text-align: right;
 
-            .overview {
-                border-radius: 15px;
-                font-size: 14px;
-                background: #FFF;
-                color: #333;
-                padding: 10px 30px;
+            .details {
                 display: inline-block;
-                transition: all 0.3s ease;
-                cursor: pointer;
+                
+                .overview {
+                    border-radius: 15px;
+                    font-size: 14px;
+                    background: #FFF;
+                    color: #333;
+                    padding: 10px 30px;
+                    display: inline-block;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
 
-                &:hover {
-                    opacity: 0.9;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                }
+
+                .submessage {
+                    text-align: center;
+                    color: #FFF;
+                    font-size: 12px;
+                    margin-top: 10px;
                 }
             }
         }
@@ -65,13 +76,26 @@ header {
 .secondary-header {
     background: #cc9f9f;
     padding: 12px 10px;
-    text-align: center;
+    text-align: left;
 
-    p {
-        color: #FFF;
-        font-size: 15px;
-        margin: 0px;
-        padding: 0px;
+    .container {
+        display: flex;
+
+        .message, .countdown {
+            color: #FFF;
+            font-size: 15px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .message {
+            flex: 1 0 70%;
+            text-align: left;
+        }
+        .countdown {
+            flex: 1 0 30%;
+            text-align: right;
+        }
     }
 }
 
