@@ -31,100 +31,109 @@
         max-width: 90%;
         overflow-y: auto;
         background: #FFF;
-        padding: 30px;
         border-radius: 15px;
 
-        .cart-products {
-            overflow-y: auto;
-            height: 300px;
+        .overlay-header {
+            background: $theme-main;
         }
-        .cart-empty {
-            text-align: center;
+        
+        .overlay-content {
+            padding: 30px;
+        }
 
+        .overlay-content, .overlay-header {
+            .cart-products {
+                overflow-y: auto;
+                height: 300px;
+            }
+            .cart-empty {
+                text-align: center;
+
+                h1 {
+                    font-size: 36px;
+                    margin-bottom: 30px;
+                }
+                a.button {
+                    display: block;
+                    width: 320px;
+                    margin: 0px auto;
+                }
+            }
             h1 {
-                font-size: 36px;
-                margin-bottom: 30px;
+                font-size: 18px;
+                margin-bottom: 15px;
             }
-            a.button {
-                display: block;
-                width: 320px;
-                margin: 0px auto;
+
+            .cartlist {
+                padding: 0px;
             }
-        }
-        h1 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
 
-        .cartlist {
-            padding: 0px;
-        }
+            .close {
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                display: inline-block;
+            }
 
-        .close {
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            display: inline-block;
-        }
+            .split {
+                display: flex;
+                flex-wrap: wrap;
 
-        .split {
-            display: flex;
-            flex-wrap: wrap;
+                .column {
+                    flex: 1 0 50%;
+                    padding: 0px 5px;
 
-            .column {
-                flex: 1 0 50%;
-                padding: 0px 5px;
+                    &:nth-child(2) {
+                        text-align: right;
 
-                &:nth-child(2) {
-                    text-align: right;
+                        @media all and (max-width: $breakpoint-mobile) {
+                            flex: 0 0 40px;
+                        }
 
-                    @media all and (max-width: $breakpoint-mobile) {
-                        flex: 0 0 40px;
-                    }
-
-                    .action {
-                        a {
-                            background: #FEA47F;
-                            color: #FFF;
-
-                            &:hover {
+                        .action {
+                            a {
                                 background: #FEA47F;
-                                border: 2px solid #FEA47F;
+                                color: #FFF;
+
+                                &:hover {
+                                    background: #FEA47F;
+                                    border: 2px solid #FEA47F;
+                                }
                             }
                         }
                     }
-                }
 
-                .action {
-                    display: inline-block;
-
-                    @media all and (max-width: $breakpoint-mobile) {
-                        width: 100%;
-                        margin-bottom: 15px;
-                    }
-
-                    a { 
-                        display: block;
-                        background: transparent;
-                        border: 2px solid #FEA47F;
-                        color: #FEA47F;
-                        text-decoration: none;
-                        font-weight: bold;
-                        transition: all 0.5s ease;
+                    .action {
+                        display: inline-block;
 
                         @media all and (max-width: $breakpoint-mobile) {
-                            padding: 15px 15px;
                             width: 100%;
-                            text-align: center;
+                            margin-bottom: 15px;
                         }
 
-                        &:hover {
-                            background: #FEA47F;
-                            color: #FFF;
+                        a { 
+                            display: block;
+                            background: transparent;
+                            border: 2px solid #FEA47F;
+                            color: #FEA47F;
+                            text-decoration: none;
+                            font-weight: bold;
+                            transition: all 0.5s ease;
+
+                            @media all and (max-width: $breakpoint-mobile) {
+                                padding: 15px 15px;
+                                width: 100%;
+                                text-align: center;
+                            }
+
+                            &:hover {
+                                background: #FEA47F;
+                                color: #FFF;
+                            }
                         }
                     }
-                }
 
+                }
             }
         }
 

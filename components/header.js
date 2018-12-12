@@ -61,8 +61,8 @@ class Header extends Component {
                 </header>
                 <div className="secondary-header">
                     <div className="container">
-                        <div className="message">{this.state.messages[0]}</div>
-                        <div className="countdown"><Countdown date={this.state.discountFinish} /> Remaining</div>
+                        <div className="message"><span className="sale">Opening Sale</span> {this.state.messages[0]}</div>
+                        <div className="countdown"><Countdown date={this.state.discountFinish} /> till sale ends</div>
                     </div>
                 </div>
                 <div className="mobile-cart" onClick={this.toggleCartOverlay}>

@@ -74,9 +74,11 @@ header {
 }
 
 .secondary-header {
-    background: #cc9f9f;
+    background: #FFF;
     padding: 12px 10px;
     text-align: left;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
 
     .container {
         display: flex;
@@ -86,9 +88,9 @@ header {
             -ms-flex-wrap: wrap;
             padding: 0px;
         }
-
+        
         .message, .countdown {
-            color: #FFF;
+            color: #333;
             font-size: 15px;
             margin: 0px;
             padding: 0px;
@@ -100,8 +102,21 @@ header {
 
             @media all and (max-width: $breakpoint-mobile) {
                 flex: 1 1 100%;
-                text-align: center;
                 margin-bottom: 5px;
+            }
+
+            .sale {
+                background: #DD353F;
+                color: #FFF;
+                text-align: center;
+                padding: 5px 10px;
+                margin-right: 10px;
+                font-size: 12px;
+                text-transform: uppercase;
+
+                @media all and (max-width: $breakpoint-mobile) {
+                    display: none;
+                }
             }
         }
         .countdown {
@@ -110,7 +125,7 @@ header {
 
             @media all and (max-width: $breakpoint-mobile) {
                 flex: 1 1 100%;
-                text-align: center;
+                text-align: left;
             }
         }
     }

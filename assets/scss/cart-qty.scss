@@ -1,9 +1,18 @@
 .add-to-cart {
     display: flex;
 
+    @media all and (max-width: 767px) {
+        flex-wrap: wrap;
+    }
+
     .column {
         flex: 0 0 50%;
         padding: 5px;
+
+        @media all and (max-width: 767px) {
+            padding: 0px;
+            flex: 100%;
+        }
 
         .quantity {
             display: flex;

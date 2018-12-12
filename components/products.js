@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { Link } from '../routes'
 import AddToCart from './add-to-cart'
 import LoadingProduct from "../components/loading-product";
-import getConfig from 'next/config'
 import { connect } from 'react-redux'
-const { publicRuntimeConfig } = getConfig()
 
 class Products extends Component {
 

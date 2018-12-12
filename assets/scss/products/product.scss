@@ -10,6 +10,10 @@
         padding: 0px 15px;
         max-width: 100%;
         width: 100%;
+
+        @media all and (max-width: 767px) {
+            padding: 0px 10px;
+        }
     }
 
     .products-list {
@@ -36,9 +40,9 @@
             {
                 flex: 0 0 50%;
             }
-            @media all and (max-width: 767px)
-            {
-                flex: 0 0 100%;
+            @media all and (max-width: 767px) {
+                flex: 0 0 50%;
+                padding: 15px 10px;
             }
 
             img {
@@ -48,16 +52,28 @@
             .details {
                 padding: 15px;
                 display: flex;
-                justify-content: center;
                 align-items: center;
+
+                @media all and (max-width: 767px) {
+                    flex-wrap: wrap;
+                    padding: 15px 0px;
+                }
 
                 .title {
                     flex: 0 0 70%;
+
+                    @media all and (max-width: 767px) {
+                        flex: 0 0 100%;
+                    }
 
                     h2 {
                         font-weight: 300;
                         font-size: 20px;
                         margin: 0px;
+
+                        @media all and (max-width: 767px) {
+                            font-size: 16px;
+                        }
                     }
                 }
                 .pricing {
@@ -65,23 +81,20 @@
                     border-left: 1px dashed #ccc;
                     text-align: center;
 
+                    @media all and (max-width: 767px) {
+                        border-left: 0px;
+                    }
+
                     .price {
                         display: block;
                         font-size: 20px;
                         font-weight: bold;
                         padding: 10px 0px;
+
+                        @media all and (max-width: 767px) {
+                            padding-left: 0px;
+                        }
                     }
-                    /*.price {
-                        display: block;
-                        font-size: 14px;
-                        text-decoration: line-through;
-                    }
-                    .saleprice {
-                        display: block;
-                        font-size: 20px;
-                        font-weight: bold;
-                        color: #27ae60;
-                    }*/
                 }
             }
         }
