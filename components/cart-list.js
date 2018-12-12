@@ -37,7 +37,7 @@ class CartList extends Component {
                                     <div className="details">
                                         <h2>{product.title}</h2>
                                         <p>Quantity: x{product._cart.quantity}</p>
-                                        <p><a onClick={() => this.removeProduct(product.id)}>Remove from cart</a></p>
+                                        <p className="remove"><a onClick={() => this.removeProduct(product.id)}>Remove</a></p>
                                     </div>
                                     <div className="price">
                                         <span className="oldprice">${product.totalprice}</span>
