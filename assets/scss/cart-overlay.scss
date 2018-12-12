@@ -29,20 +29,29 @@
         max-height: 90%;
         width: 800px;
         max-width: 90%;
-        overflow-y: auto;
         background: #FFF;
         border-radius: 15px;
 
         .overlay-header {
             background: $theme-main;
+            padding: 20px 30px;
+
+            .close {
+                font-size: 18px;
+                font-weight: bold;
+                color: #FFF;
+                cursor: pointer;
+                display: inline-block;
+            }
         }
         
         .overlay-content {
             padding: 30px;
+            overflow-y: auto;
         }
 
         .overlay-content, .overlay-header {
-            .cart-products {
+            .cartproducts {
                 overflow-y: auto;
                 height: 300px;
             }
@@ -61,18 +70,12 @@
             }
             h1 {
                 font-size: 18px;
-                margin-bottom: 15px;
+                margin-bottom: 0px;
+                color: #FFF;
             }
 
             .cartlist {
                 padding: 0px;
-            }
-
-            .close {
-                font-size: 18px;
-                font-weight: bold;
-                cursor: pointer;
-                display: inline-block;
             }
 
             .split {

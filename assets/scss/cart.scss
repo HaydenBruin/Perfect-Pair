@@ -137,11 +137,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 15px 0px;
+		padding: 5px 0px;
 		border-bottom: 1px dotted #eee;
 
 		.image {
-			flex: 0 0 75px;
+			flex: 0 0 50px;
 			margin-right: 15px;
 		}
 
@@ -155,6 +155,7 @@
 
 			p {
 				font-size: 12px;
+				margin-bottom: 0px;
 			}
 
 			.amount {
