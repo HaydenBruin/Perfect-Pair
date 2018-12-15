@@ -50,6 +50,18 @@ class DefaultLayout extends Component {
                     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico" />
 
                     <script src="https://js.stripe.com/v3/"></script>
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131039519-1"></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                          
+                            gtag('config', 'UA-131039519-1');
+                    `}}
+                    />
+
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `
