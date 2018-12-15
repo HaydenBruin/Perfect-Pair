@@ -50,8 +50,10 @@ class DefaultLayout extends Component {
                     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico" />
 
                     <script src="https://js.stripe.com/v3/"></script>
-                    <script>
-                        !function(f,b,e,v,n,t,s)
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                    !function(f,b,e,v,n,t,s)
                     {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
                             n.callMethod.apply( n, arguments ) : n.queue.push( arguments )};
                     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -61,7 +63,8 @@ class DefaultLayout extends Component {
                     'https://connect.facebook.net/en_US/fbevents.js');
                     fbq('init', '259263868076655');
                     fbq('track', 'PageView');
-                    </script>
+                    `}}
+                    />
                     <noscript><img height="1" width="1" style="display:none"
                         src="https://www.facebook.com/tr?id=259263868076655&ev=PageView&noscript=1"
                     /></noscript>
