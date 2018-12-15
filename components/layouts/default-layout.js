@@ -65,7 +65,7 @@ class DefaultLayout extends Component {
                     fbq('track', 'PageView');
                     `}}
                     />
-                    <noscript><img height="1" width="1" style="display:none"
+                    <noscript><img height="1" width="1" style={{ display: 'none' }}
                         src="https://www.facebook.com/tr?id=259263868076655&ev=PageView&noscript=1"
                     /></noscript>
 
