@@ -8,7 +8,7 @@ export default class index extends Component {
         return (
             <DefaultLayout>
                 <div className="christmas-delivery">
-                    <p>Order before 21st December to guarantee christmas delivery!</p>
+                    <p>Order before 21st December to guarantee christmas delivery!<br />We ship all orders locally!</p>
                 </div>
                 <Products products={this.props.products} />
             </DefaultLayout>
