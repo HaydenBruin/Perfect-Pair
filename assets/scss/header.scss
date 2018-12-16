@@ -127,6 +127,10 @@ header {
                 flex: 1 1 100%;
                 text-align: left;
             }
+
+            span {
+                font-weight: bold;
+            }
         }
     }
 }
@@ -151,5 +155,18 @@ header {
             padding-top: 2px;
             display: block;
         }
+    }
+}
+
+.christmas-delivery {
+    text-align: center;
+
+    p {
+        border-top: 2px dotted #DD353F;
+        border-bottom: 2px dotted #339900;
+        text-align: center;
+        display: inline-block;
+        padding: 10px 30px;
+        margin: 15px 0px;
     }
 }

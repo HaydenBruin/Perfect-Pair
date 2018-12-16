@@ -7,6 +7,9 @@ export default class index extends Component {
     render() {
         return (
             <DefaultLayout>
+                <div className="christmas-delivery">
+                    <p>Order before 21st December to guarantee christmas delivery!</p>
+                </div>
                 <Products products={this.props.products} />
             </DefaultLayout>
         )
