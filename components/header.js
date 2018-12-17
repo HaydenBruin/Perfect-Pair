@@ -9,10 +9,11 @@ class Header extends Component {
     sliderTimer = null;
 
     state = {
-        discountFinish: 1545044655363,
+        discountFinish: 1545363932015,
         currentMessage: 0,
         messages: [
-            "Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
+            "All novetly socks just $5.99 (usually $9.99), only until Christmas!"
+            //"Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
         ]
     }
     
