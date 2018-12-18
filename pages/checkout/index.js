@@ -91,7 +91,7 @@ class Cart extends Component {
         }
 
         return (
-            <DefaultLayout>
+            <DefaultLayout checkoutPage={true}>
                 <div className="checkout">
                     <div className="check">
                         <div className="steps">

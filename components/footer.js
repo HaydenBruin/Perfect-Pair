@@ -5,7 +5,7 @@ export default class Footer extends Component {
 
     render() {
         return (
-            <footer>
+            <footer className={this.props.checkoutPage ? "no-mobile-cart" : null}>
                 <div className="container-fluid">
                     <div className="actions">
                         <Link to="/delivery"><a>Delivery</a></Link>

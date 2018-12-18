@@ -4,6 +4,10 @@ footer {
         
     @media all and (max-width: $breakpoint-mobile) {
         margin-bottom: 66px;
+
+        &.no-mobile-cart {
+            margin-bottom: 0px;
+        }
     }
 
     .container-fluid {

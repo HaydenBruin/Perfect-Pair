@@ -37,8 +37,8 @@ class DefaultLayout extends Component {
     }
 
     render() {
-        const headerElement = this.props.disableHeader ? null : <Header />
-        const footerElement = this.props.disableFooter ? null : <Footer />
+        const headerElement = this.props.disableHeader ? null : <Header checkoutPage={this.props.checkoutPage} />
+        const footerElement = this.props.disableFooter ? null : <Footer checkoutPage={this.props.checkoutPage} />
         return (
             <Fragment>
                 <Head>
