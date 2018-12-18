@@ -73,7 +73,11 @@ class Cart extends Component {
                     <div className="validate error">{this.state.errorMSG}</div>
                 )}
                 
-                <input type="text" name="email_address" placeholder="Your Email address" value={this.state.email_address} onChange={this.updateEmailAddress}/>
+                <div className={this.state.email_address ? "field active" : "field"}>
+                    <label>Your Email Address</label>
+                    <input type="text" name="email_address" placeholder="Your Email address" value={this.state.email_address} onChange={this.updateEmailAddress} />
+                </div>
+                
                 <button className="button">Continue</button>
             </form>
 

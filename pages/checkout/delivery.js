@@ -102,11 +102,31 @@ class Delivery extends Component {
                     <div className="validate error">{this.state.errorMSG}</div>
                 )}
 
-                <input type="text" name="fullname" placeholder="Full Name / Business Name" value={this.state.fullname} onChange={this.updateFullName} />
-                <input type="text" name="address" placeholder="Address" value={this.state.address} onChange={this.updateAddress} />
-                <input type="text" name="suburb" placeholder="Suburb" value={this.state.suburb} onChange={this.updateSuburb} />
-                <input type="text" name="city" placeholder="City" value={this.state.city} onChange={this.updateCity} />
-                <input type="text" name="postcode" placeholder="Postcode" value={this.state.postcode} onChange={this.updatePostcode} />
+                <div className={this.state.fullname ? "field active" : "field"}>
+                    <label>Full Name / Business Name</label>
+                    <input type="text" name="fullname" placeholder="Full Name / Business Name" value={this.state.fullname} onChange={this.updateFullName} />
+                </div>
+
+                <div className={this.state.address ? "field active" : "field"}>
+                    <label>Address</label>
+                    <input type="text" name="address" placeholder="Address" value={this.state.address} onChange={this.updateAddress} />
+                </div>
+
+                <div className={this.state.suburb ? "field active" : "field"}>
+                    <label>Suburb</label>
+                    <input type="text" name="suburb" placeholder="Suburb" value={this.state.suburb} onChange={this.updateSuburb} />
+                </div>
+
+                <div className={this.state.city ? "field active" : "field"}>
+                    <label>City</label>
+                    <input type="text" name="city" placeholder="City" value={this.state.city} onChange={this.updateCity} />
+                </div>
+
+                <div className={this.state.postcode ? "field active" : "field"}>
+                    <label>Postcode</label>
+                    <input type="text" name="postcode" placeholder="Postcode" value={this.state.postcode} onChange={this.updatePostcode} />
+                </div>
+
                 <button className="button">Confirm Shipping Address</button>
             </form>
         )
