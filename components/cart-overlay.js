@@ -34,22 +34,15 @@ export class CartOverlay extends Component {
                             <div className="column">
                                 <h1>Your bag ({this.props.cartProducts.length} item(s))</h1>
                             </div>
-                            <div className="column">
-                                <div className="close" onClick={this.toggleCartOverlay}>X</div>
-                            </div>
+                            <div className="close" onClick={this.toggleCartOverlay}>X</div>
                         </div>
                     </div>
                     <div className="overlay-content">
                         <CartList />
 
                         <div className="actions">
-                            <div className="split">
-                                <div className="column"></div>
-                                <div className="column">
-                                    <div className="action">
-                                        <Link href="/checkout"><a className="button">Checkout</a></Link>
-                                    </div>
-                                </div>
+                            <div className="action">
+                                <Link href="/checkout"><a className="button">Checkout</a></Link>
                             </div>
                         </div>
                     </div>
