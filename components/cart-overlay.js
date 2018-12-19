@@ -44,11 +44,7 @@ export class CartOverlay extends Component {
 
                         <div className="actions">
                             <div className="split">
-                                <div className="column">
-                                    <div className="action">
-                                        <a className="button" onClick={this.toggleCartOverlay}>Continue Shopping</a>
-                                    </div>
-                                </div>
+                                <div className="column"></div>
                                 <div className="column">
                                     <div className="action">
                                         <Link href="/checkout"><a className="button">Checkout</a></Link>
