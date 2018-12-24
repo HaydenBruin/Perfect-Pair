@@ -9,7 +9,7 @@ class Header extends Component {
     sliderTimer = null;
 
     state = {
-        discountFinish: 1545363932015,
+        discountFinish: 1546243541807,
         currentMessage: 0,
         messages: [
             "All novetly socks just $5.99 (usually $9.99), only until Christmas!"
