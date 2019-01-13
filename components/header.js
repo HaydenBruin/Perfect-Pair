@@ -12,8 +12,8 @@ class Header extends Component {
         discountFinish: 1546243541807,
         currentMessage: 0,
         messages: [
-            "All novetly socks just $5.99 (usually $9.99)"
-            //"Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
+            //"All novetly socks just $5.99 (usually $9.99)"
+            "Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
         ]
     }
     
@@ -62,7 +62,7 @@ class Header extends Component {
                 </header>
                 <div className="secondary-header">
                     <div className="container">
-                        <div className="message"><span className="sale">Opening Sale</span> {this.state.messages[0]}</div>
+                        <div className="message"><span className="sale">Deal</span> {this.state.messages[0]}</div>
                         <div className="countdown" style={{display: 'none'}}><Countdown date={this.state.discountFinish} /> till sale ends</div>
                     </div>
                 </div>
