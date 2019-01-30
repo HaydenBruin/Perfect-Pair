@@ -13,7 +13,8 @@ class Header extends Component {
         currentMessage: 0,
         messages: [
             //"All novetly socks just $5.99 (usually $9.99)"
-            "Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
+            //"Buy 2 pairs of socks get 15% off, buy 3 pairs get 30% off"
+            "Buy 1 pair of socks and get the second one free"
         ]
     }
     
@@ -80,7 +81,6 @@ class Header extends Component {
 const mapStateToProps = (state) => ({
     cartOverview: state.cartOverview,
     cartProducts: state.cartProducts
-
 })
 
 export default connect(mapStateToProps)(Header)
